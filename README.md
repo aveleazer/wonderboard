@@ -100,6 +100,7 @@ To explore the interface without API calls, use test mode (type `test question`)
 - `profiles/*.md` — advisor personas (fully editable, add your own)
 - `prompts/*.md` — prompt templates
 - 10 UI languages, auto-detected from browser
+- Dark mode — because important decisions are best made at night
 
 ## Architecture
 
