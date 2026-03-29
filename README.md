@@ -56,9 +56,9 @@ Claude will install it and open Wonderboard in your browser. Next time, just typ
 
 ### Tokens
 
-Wonderboard is token-intensive. One full session: 7 advisors × 2 rounds + interview + synthesis = 16+ Claude calls. On a Claude Max/Pro subscription, this is covered by your plan.
+Wonderboard is token-intensive. A full session on Opus: 7 advisors × 2 rounds + interview + synthesis = 16+ Claude calls, 300,000+ tokens.
 
-To explore the interface without API calls, use test mode (type `test question`).
+To explore the interface without spending tokens, use test mode (type `test question`).
 
 ## The Board
 
