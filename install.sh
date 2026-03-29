@@ -56,4 +56,4 @@ SKILL
 
 echo "OK Skill installed to $SKILL_DIR"
 echo ""
-echo "Done! Type /wonderboard in Claude Code to start a session."
+echo "Installed. Now launch Wonderboard — check context.md and start the server."

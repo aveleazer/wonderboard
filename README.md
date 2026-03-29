@@ -50,7 +50,7 @@ Paste this into [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code
 Clone https://github.com/aveleazer/wonderboard and run install.sh
 ```
 
-Claude will install it and open Wonderboard in your browser. Next time, just type `/wonderboard` or ask Claude to convene the board.
+Claude will set it up, ask about your situation, and open Wonderboard in your browser. Next time — `/wonderboard` or just ask Claude to convene the board.
 
 **Requirements:** Node.js 18+, [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) (works on your existing subscription — no API keys).
 
