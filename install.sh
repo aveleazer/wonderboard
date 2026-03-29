@@ -48,7 +48,7 @@ Write their answer to \`${BOARD_DIR}/context.md\` in a clean structured format.
 
 1. Check server: \`curl -s -o /dev/null -w "%{http_code}" http://localhost:3737/\`
 2. If not 200: \`cd ${BOARD_DIR} && node server.js &\` and wait 2s
-3. Open browser: the server auto-opens on start
+3. **Always** open the browser (even if server was already running): \`wslview http://localhost:3737 || xdg-open http://localhost:3737 || open http://localhost:3737\`
 4. Tell user: "Wonderboard is open in the browser. The entire session runs there."
 
 Do not orchestrate the session. The server handles everything.
