@@ -44,7 +44,7 @@ Wonderboard isn't limited to business. It's a tool for any decision that needs p
 
 ## Install
 
-Paste this into [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code):
+Paste this into Claude Code:
 
 ```
 Clone https://github.com/aveleazer/wonderboard and run install.sh
@@ -52,7 +52,7 @@ Clone https://github.com/aveleazer/wonderboard and run install.sh
 
 Claude will set it up, ask about your situation, and open Wonderboard in your browser. Next time — `/wonderboard` or just ask Claude to convene the board.
 
-**Requirements:** Node.js 18+, [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) (works on your existing subscription — no API keys).
+**Requirements:** Node.js 18+, Claude Code CLI (works on your existing subscription — no API keys).
 
 ### Tokens
 
