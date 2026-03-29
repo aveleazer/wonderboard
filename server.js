@@ -67,6 +67,7 @@ function freshState() {
     model: 'sonnet',
     tokens: {input: 0, output: 0},
     title: null,
+    titleEn: null,
     question: null,
     interview: [],
     hatterSessionId: null,
@@ -209,7 +210,9 @@ async function runHatter(question, lang) {
     const parsed = parseJSON(raw);
     const questions = parsed.questions || parsed;
     const title = parsed.title || null;
+    const titleEn = parsed.title_en || null;
     state.title = title;
+    state.titleEn = titleEn;
     state.interview = questions.map(q => ({...q, a: ''}));
     broadcast('hatter_questions', {title, questions});
   } catch (err) {
@@ -384,7 +387,7 @@ function buildProtocol() {
 
 function saveSession() {
   const date = new Date().toISOString().slice(0, 10);
-  const raw = (state.title || state.question || 'session').slice(0, 40);
+  const raw = (state.titleEn || state.title || state.question || 'session').slice(0, 40);
   const topic = raw.replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase() || 'session';
   const filename = path.join(SESSIONS_DIR, `${date}_${topic}.json`);
   fs.writeFileSync(filename, JSON.stringify(state, null, 2));
@@ -537,7 +540,7 @@ async function handler(req, res) {
       return res.end('No session to download');
     }
     const protocol = buildProtocol();
-    const slug = (state.title || 'session').slice(0, 40).replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase() || 'session';
+    const slug = (state.titleEn || state.title || 'session').slice(0, 40).replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase() || 'session';
     const filename = `wonderboard-${slug}-${new Date().toISOString().slice(0, 10)}.md`;
     const utfFilename = encodeURIComponent(filename);
     res.writeHead(200, {
