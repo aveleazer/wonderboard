@@ -1,4 +1,4 @@
-🌐 [English](README.md) · [Русский](README.ru.md) · [中文](README.zh.md) · [Español](README.es.md) · [हिन्दी](README.hi.md) · [العربية](README.ar.md) · [Português](README.pt.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [日本語](README.ja.md)
+🌐 [English](README.md) · [Русский](docs/README.ru.md) · [中文](docs/README.zh.md) · [Español](docs/README.es.md) · [हिन्दी](docs/README.hi.md) · [العربية](docs/README.ar.md) · [Português](docs/README.pt.md) · [Français](docs/README.fr.md) · [Deutsch](docs/README.de.md) · [日本語](docs/README.ja.md)
 
 # Wonderboard
 
