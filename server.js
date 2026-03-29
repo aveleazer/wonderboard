@@ -537,11 +537,12 @@ async function handler(req, res) {
       return res.end('No session to download');
     }
     const protocol = buildProtocol();
-    const slug = (state.title || 'session').slice(0, 40).replace(/[^a-z0-9а-яё]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase();
-    const filename = `board-${slug}-${new Date().toISOString().slice(0, 10)}.md`;
+    const slug = (state.title || 'session').slice(0, 40).replace(/[^a-z0-9]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase() || 'session';
+    const filename = `wonderboard-${slug}-${new Date().toISOString().slice(0, 10)}.md`;
+    const utfFilename = encodeURIComponent(filename);
     res.writeHead(200, {
       'Content-Type': 'text/markdown; charset=utf-8',
-      'Content-Disposition': `attachment; filename="${filename}"`,
+      'Content-Disposition': `attachment; filename="${filename}"; filename*=UTF-8''${utfFilename}`,
     });
     return res.end(protocol);
   }
