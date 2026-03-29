@@ -17,7 +17,7 @@ No yes-men. No consensus-seeking. Real disagreement from archetypes who think di
 ```bash
 git clone https://github.com/aveleazer/wonderboard.git
 cd wonderboard
-ANTHROPIC_API_KEY=sk-... node server.js
+node server.js
 ```
 
 Opens in your browser at `localhost:3737`. That's it.
@@ -27,7 +27,7 @@ On first run, `context.md` is created — describe your business there. It's inc
 ## Requirements
 
 - Node.js 18+
-- `ANTHROPIC_API_KEY` environment variable
+- [Claude Code](https://claude.ai/code) CLI installed and authenticated (works on your existing subscription — no API keys needed)
 
 ## The Board
 
@@ -64,7 +64,7 @@ Zero dependencies. Built-in Node.js modules only.
 
 | File | What it does |
 |------|-------------|
-| `server.js` | HTTP server, Claude API calls, session logic |
+| `server.js` | HTTP server, calls Claude via CLI, session logic |
 | `ui.html` | Single-page interface — no framework, no build step |
 | `profiles/` | Persona system prompts |
 | `prompts/` | Prompt templates |

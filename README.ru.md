@@ -17,7 +17,7 @@
 ```bash
 git clone https://github.com/aveleazer/wonderboard.git
 cd wonderboard
-ANTHROPIC_API_KEY=sk-... node server.js
+node server.js
 ```
 
 Открывается в браузере на `localhost:3737`. Всё.
@@ -27,7 +27,7 @@ ANTHROPIC_API_KEY=sk-... node server.js
 ## Требования
 
 - Node.js 18+
-- Переменная окружения `ANTHROPIC_API_KEY`
+- [Claude Code](https://claude.ai/code) CLI — установлен и авторизован (работает на вашей подписке, API-ключи не нужны)
 
 ## Совет
 
@@ -64,7 +64,7 @@ ANTHROPIC_API_KEY=sk-... node server.js
 
 | Файл | Что делает |
 |------|-------------|
-| `server.js` | HTTP-сервер, вызовы Claude API, логика сессий |
+| `server.js` | HTTP-сервер, вызовы Claude через CLI, логика сессий |
 | `ui.html` | Одностраничный интерфейс — без фреймворков, без сборки |
 | `profiles/` | Системные промпты персон |
 | `prompts/` | Шаблоны промптов |
