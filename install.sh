@@ -36,6 +36,16 @@ description: "Virtual board of directors — 7 AI advisors for strategic consult
 
 # Wonderboard Launcher
 
+## Step 1: Context
+
+Read \`${BOARD_DIR}/context.md\`. If the file is missing or still contains the default template (starts with "Describe your situation"), ask the user:
+
+"Before we start — tell me briefly about yourself and your situation. What do you do, what's your context? I'll save this so the advisors know who they're talking to."
+
+Write their answer to \`${BOARD_DIR}/context.md\` in a clean structured format.
+
+## Step 2: Launch
+
 1. Check server: \`curl -s -o /dev/null -w "%{http_code}" http://localhost:3737/\`
 2. If not 200: \`cd ${BOARD_DIR} && node server.js &\` and wait 2s
 3. Open browser: the server auto-opens on start

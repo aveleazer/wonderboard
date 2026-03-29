@@ -25,17 +25,9 @@ const LANG_NAMES = {
 
 const CONTEXT_PATH = path.join(__dirname, 'context.md');
 if (!fs.existsSync(CONTEXT_PATH)) {
-  fs.writeFileSync(CONTEXT_PATH, `# Business Context
-
-Describe your business here. This context is included in every sage's prompt.
-
-Example:
-- Main product: ...
-- Revenue model: ...
-- Team size: ...
-- Current challenges: ...
+  fs.writeFileSync(CONTEXT_PATH, `Describe your situation here. This context is included in every advisor's prompt.
 `);
-  console.log('Created context.md — edit it to describe your business.');
+  console.log('Created context.md — describe your situation there.');
 }
 const BUSINESS_CONTEXT = fs.readFileSync(CONTEXT_PATH, 'utf-8');
 

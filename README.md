@@ -20,7 +20,7 @@ In real life, the best decisions come from arguments between people who think di
 
 **Interview.** The Hatter asks clarifying questions before convening the Board. You won't get seven answers to a poorly framed question.
 
-**Context.** The `context.md` file describes your situation. Every advisor gets it automatically — no need to re-explain who you are every time.
+**Context.** On first launch, Claude asks about your situation and saves it. Every advisor gets this context automatically — no need to re-explain who you are every time.
 
 **Synthesis ≠ averaging.** The Hatter doesn't seek compromise. He maps the disagreements: where they converged, where they diverged, why — and adds one perpendicular thought that flips the situation.
 
@@ -84,7 +84,7 @@ To explore the interface without spending tokens, use test mode (type `test ques
 
 ## Configuration
 
-- `context.md` — your situation and context (auto-created on first run, gitignored)
+- `context.md` — your situation (Claude asks and fills it on first launch, gitignored)
 - `profiles/*.md` — advisor personas (fully editable, add your own)
 - `prompts/*.md` — prompt templates
 - 10 UI languages, auto-detected from browser
