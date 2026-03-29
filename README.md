@@ -17,12 +17,12 @@ No yes-men. No consensus-seeking. Real disagreement from archetypes who think di
 ```bash
 git clone https://github.com/aveleazer/wonderboard.git
 cd wonderboard
-node server.js
+./install.sh
 ```
 
-Opens in your browser at `localhost:3737`. That's it.
+Then in Claude Code, type `/board`. That's it.
 
-On first run, `context.md` is created — describe your business there. It's included in every advisor's prompt.
+The board opens in your browser. On first run, `context.md` is created — describe your business there. It's included in every advisor's prompt.
 
 ## Requirements
 

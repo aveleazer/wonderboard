@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seven Sages &amp; the Hatter</title>
+<style>
+/* ═══ FONTS ═══ */
+@font-face { font-family: 'Literata'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/literata-400-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Literata'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/literata-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Literata'; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/literata-400-italic-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Literata'; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(/fonts/literata-400-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Literata'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url(/fonts/literata-600-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Literata'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url(/fonts/literata-600-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Literata'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/literata-700-cyrillic.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Literata'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/fonts/literata-700-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 300; font-display: swap;
+  src: url(/fonts/dm-300-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/fonts/dm-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 500; font-display: swap;
+  src: url(/fonts/dm-500-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'DM Sans'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url(/fonts/dm-600-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+:root[data-theme="light"] {
+  --bg-void: #f5f3ef; --bg-surface: #ffffff; --bg-card: #ffffff;
+  --bg-input: #f8f7f4; --bg-qa: #f0ede6;
+  --border: #e4e0d8; --border-active: #c8c2b6;
+  --text-primary: #1a1a1a; --text-secondary: #555555; --text-muted: #716b64;
+  --accent: #8b6914; --accent-dim: #b8942e; --accent-light: rgba(139,105,20,0.06);
+  --accent-red: #a63d2f; --accent-green: #3d7a52;
+  --text-on-accent: #fff;
+  --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05);
+}
+:root[data-theme="dark"] {
+  --bg-void: #0e0f13; --bg-surface: #16171e; --bg-card: #1a1c25;
+  --bg-input: #111218; --bg-qa: #111218;
+  --border: #2a2d3a; --border-active: #3d4155;
+  --text-primary: #e4e2de; --text-secondary: #aaabaf; --text-muted: #8e90a0;
+  --accent: #c9a23c; --accent-dim: #8a7230; --accent-light: rgba(201,162,60,0.06);
+  --accent-red: #c95e4c; --accent-green: #4cb87a;
+  --text-on-accent: #111218;
+  --shadow: 0 1px 3px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15);
+  --shadow-hover: 0 2px 8px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.2);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+::selection { background: var(--accent); color: var(--text-on-accent); }
+body {
+  background: var(--bg-void); color: var(--text-primary);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 400;
+  line-height: 1.6; min-height: 100vh;
+  transition: background 0.3s, color 0.3s; padding-bottom: 56px;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 40px 28px; }
+
+/* ═══ HEADER ═══ */
+.header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; }
+.header-left h1 { font-family: 'Literata', Georgia, serif; font-size: 32px; font-weight: 700; letter-spacing: -0.3px; line-height: 1.2; }
+.header-left h1 .amp { font-style: italic; font-weight: 400; color: var(--text-muted); }
+.header-left .subtitle { font-size: 13px; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.3px; }
+.header-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; margin-top: 8px; }
+.theme-toggle, .reset-btn {
+  display: flex; align-items: center; gap: 8px; padding: 6px 14px;
+  background: var(--bg-surface); border: 1px solid var(--border); border-radius: 20px;
+  cursor: pointer; font-size: 13px; color: var(--text-secondary);
+  font-family: inherit;
+  transition: all 0.3s; user-select: none;
+}
+.theme-toggle.preview-dark {
+  background: #1a1c25; border-color: #2a2d3a; color: #aaabaf;
+}
+.theme-toggle.preview-light {
+  background: #ffffff; border-color: #e4e0d8; color: #555555;
+}
+.theme-toggle:hover, .reset-btn:hover { border-color: var(--border-active); }
+.theme-toggle:focus-visible, .reset-btn:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+.reset-btn { color: var(--accent-red); }
+.model-select {
+  padding: 6px 12px; background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: 20px; font-family: inherit; font-size: 13px; color: var(--text-secondary);
+  cursor: pointer; outline: none; -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6' fill='%23999'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center;
+  padding-right: 28px;
+}
+.model-select:hover { border-color: var(--border-active); }
+.model-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ═══ SECTIONS ═══ */
+.section { margin-bottom: 32px; opacity: 0; transform: translateY(12px); transition: opacity 0.4s, transform 0.4s; pointer-events: none; max-height: 0; overflow: hidden; }
+.section.visible { opacity: 1; transform: translateY(0); pointer-events: auto; max-height: none; overflow: visible; }
+.section-label {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+  color: var(--text-muted); font-weight: 500; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ═══ INPUTS ═══ */
+.q-box {
+  background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 20px 24px; box-shadow: var(--shadow); transition: border-color 0.3s, box-shadow 0.3s;
+}
+.q-box:focus-within { border-color: var(--accent-dim); box-shadow: 0 0 0 3px var(--accent-light); }
+.q-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 600; margin-bottom: 8px; display: block; }
+.q-input {
+  width: 100%; background: none; border: none; color: var(--text-primary);
+  font-family: 'Literata', Georgia, serif; font-size: 18px; font-style: italic;
+  line-height: 1.6; resize: none; outline: none; min-height: 52px;
+  overflow: hidden;
+}
+.q-input::placeholder { color: var(--text-muted); }
+
+.field-input {
+  width: 100%; padding: 8px 12px; background: var(--bg-input);
+  border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text-primary); font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px; line-height: 1.5; outline: none; transition: border-color 0.2s;
+}
+.field-input:focus { border-color: var(--accent-dim); }
+.field-input:focus-visible { box-shadow: 0 0 0 3px var(--accent-light); }
+textarea.field-input { resize: vertical; min-height: 60px; }
+
+/* ═══ INTERVIEW ═══ */
+.interview-list { display: grid; gap: 8px; }
+.hatter-options { display: flex; flex-direction: column; gap: 6px; }
+.hatter-option {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; background: var(--bg-surface);
+  border: 1px solid var(--border); border-radius: 8px;
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  font-size: 14px; color: var(--text-primary); font-family: inherit;
+  text-align: left; width: 100%;
+}
+.hatter-option:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+.hatter-option:hover { border-color: var(--accent-dim); background: var(--accent-light); }
+.hatter-option:active { transform: scale(0.99); }
+.hatter-option.selected { border-color: var(--accent); background: var(--accent-light); }
+.hatter-option-num {
+  display: flex; align-items: center; justify-content: center;
+  width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0;
+  background: var(--accent-light); color: var(--accent); font-size: 12px; font-weight: 600;
+}
+
+/* ═══ SAGE TABS ═══ */
+.sage-tabs { border: 1px solid var(--border); border-radius: 10px; background: var(--bg-card); box-shadow: var(--shadow); overflow: hidden; position: relative; }
+.sages-thinking-overlay {
+  display: none; position: absolute; inset: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg-card) 85%, transparent);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+}
+.sages-thinking-overlay.visible { display: flex; }
+.sages-thinking-emoji {
+  font-size: 36px; display: flex; gap: 4px;
+}
+.sages-thinking-emoji span {
+  animation: sageFloat 2s ease-in-out infinite;
+  display: inline-block;
+}
+.sages-thinking-emoji span:nth-child(1) { animation-delay: 0s; }
+.sages-thinking-emoji span:nth-child(2) { animation-delay: 0.15s; }
+.sages-thinking-emoji span:nth-child(3) { animation-delay: 0.3s; }
+.sages-thinking-emoji span:nth-child(4) { animation-delay: 0.45s; }
+.sages-thinking-emoji span:nth-child(5) { animation-delay: 0.6s; }
+.sages-thinking-emoji span:nth-child(6) { animation-delay: 0.75s; }
+.sages-thinking-emoji span:nth-child(7) { animation-delay: 0.9s; }
+@keyframes sageFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-10px); opacity: 1; }
+}
+.sages-thinking-text { font-size: 13px; color: var(--text-muted); font-style: italic; }
+.sage-tab-bar { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--border); }
+.sage-tab {
+  flex: 1 1 auto; padding: 8px 6px; cursor: pointer;
+  border: none; background: none; color: var(--text-muted);
+  font-family: inherit; font-size: 12px; font-weight: 500;
+  border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap;
+}
+.sage-tab:hover { color: var(--text-primary); background: var(--accent-light); }
+.sage-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.sage-tab.active { color: var(--text-primary); border-bottom-color: var(--sage-color, var(--accent)); }
+.sage-tab.thinking { opacity: 0.5; }
+.sage-tab.filled { color: var(--text-primary); }
+.sage-tab .tab-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-color, var(--accent)); opacity: 0; transition: opacity 0.2s; }
+.sage-tab.filled .tab-dot { opacity: 1; }
+.sage-tab-emoji { font-size: 16px; }
+.sage-tab-panel { padding: 20px; display: none; min-height: 200px; }
+.sage-tab-panel.active { display: block; }
+.sage-tab-panel .thinking-state { padding: 40px; text-align: center; font-style: italic; color: var(--text-muted); }
+.sage-tab-panel .card-error { color: var(--accent-red); font-size: 13px; display: none; }
+.card-body { padding: 12px 18px 20px; }
+
+/* ═══ ROUND TABS (inside sage panel) ═══ */
+.sage-round-tabs {
+  display: flex; gap: 0; margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.sage-round-tab {
+  padding: 6px 14px; border: none; background: none; cursor: pointer;
+  font-family: inherit; font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--text-muted);
+  border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
+}
+.sage-round-tab:hover { color: var(--text-primary); }
+.sage-round-tab.active { color: var(--sage-color, var(--accent)); border-bottom-color: var(--sage-color, var(--accent)); }
+.sage-round-panel { display: none; }
+.sage-round-panel.active { display: block; }
+
+.round { margin-bottom: 20px; }
+.round-title {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--text-on-accent); font-weight: 600;
+  margin-bottom: 12px; padding: 5px 10px; border-radius: 4px;
+  background: var(--sage-color, var(--accent)); display: inline-block;
+}
+.round-content { font-size: 14px; line-height: 1.75; color: var(--text-secondary); max-width: 65ch; }
+.round-content strong { color: var(--text-primary); font-weight: 600; }
+.round-content h3 { font-family: 'Literata', Georgia, serif; font-size: 16px; font-weight: 600; margin: 16px 0 8px; color: var(--text-primary); }
+.round-content h4 { font-size: 13px; font-weight: 600; margin: 12px 0 6px; color: var(--text-primary); }
+.round-content ul { list-style: none; margin: 8px 0; }
+.round-content li { padding: 3px 0; }
+.round-content li::before { content: '\00b7'; color: var(--accent); font-weight: 700; margin-right: 8px; }
+.round-content blockquote { border-left: 3px solid var(--border); padding-left: 12px; color: var(--text-muted); margin: 8px 0; }
+.round-content p { margin: 8px 0; }
+.round-content p:first-child { margin-top: 0; }
+
+.qa-pair { background: var(--bg-qa); border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; }
+.qa-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 4px; }
+.qa-label.q { color: var(--accent-red); }
+.qa-label.a { color: var(--accent-green); margin-top: 10px; }
+.qa-text { font-size: 14px; color: var(--text-primary); line-height: 1.6; }
+.qa-text.question { font-family: 'Literata', Georgia, serif; font-style: italic; font-size: 15px; }
+
+/* ═══ THINKING STATE ═══ */
+.thinking-state {
+  display: none; padding: 12px 18px 16px;
+  font-size: 13px; color: var(--text-muted); font-style: italic;
+}
+.thinking-dots::after {
+  content: ''; animation: dots 1.5s steps(4, end) infinite;
+}
+@keyframes dots {
+  0% { content: ''; } 25% { content: '.'; } 50% { content: '..'; } 75% { content: '...'; }
+}
+@keyframes thinkPulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+
+/* ═══ BUTTONS ═══ */
+.btn {
+  padding: 6px 16px; border: 1px solid var(--border); border-radius: 6px;
+  background: var(--bg-input); color: var(--text-secondary);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 12px; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, opacity 0.2s;
+}
+.btn:hover { border-color: var(--border-active); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:active:not(:disabled) { transform: scale(0.97); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); }
+.btn-primary:hover:not(:disabled) { opacity: 0.9; }
+.btn-submit { padding: 10px 24px; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; min-height: 44px; }
+
+/* ═══ SYNTHESIS ═══ */
+.synthesis {
+  background: var(--bg-surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 28px; box-shadow: var(--shadow);
+}
+.synthesis h2 { font-family: 'Literata', Georgia, serif; font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+.synthesis-content { font-size: 14px; line-height: 1.75; color: var(--text-secondary); max-width: 65ch; }
+.synthesis-content strong { color: var(--text-primary); font-weight: 600; }
+.synthesis-content h3 { font-family: 'Literata', Georgia, serif; font-size: 18px; font-weight: 600; margin: 24px 0 10px; color: var(--text-primary); }
+.synthesis-content h4 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; color: var(--text-primary); }
+.synthesis-content ul { list-style: none; margin: 8px 0; }
+.synthesis-content li { padding: 3px 0; }
+.synthesis-content li::before { content: '\00b7'; color: var(--accent); font-weight: 700; margin-right: 8px; }
+.synthesis-content blockquote { border-left: 3px solid var(--accent); padding: 12px 16px; color: var(--text-primary); margin: 12px 0; background: var(--accent-light); border-radius: 0 8px 8px 0; }
+.synthesis-content p { margin: 8px 0; }
+
+/* ═══ ERROR ═══ */
+.global-error {
+  background: var(--bg-surface); border: 1px solid var(--accent-red); border-radius: 8px;
+  padding: 14px 18px; margin-bottom: 16px; color: var(--accent-red); font-size: 13px;
+  display: none;
+}
+.global-error.visible { display: block; }
+
+/* ═══ STATUS ═══ */
+.status-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--bg-surface); border-top: 1px solid var(--border);
+  padding: 8px 28px; display: flex; justify-content: space-between; align-items: center;
+  font-family: 'SF Mono', 'Cascadia Code', Consolas, monospace; font-size: 11px; color: var(--text-muted); z-index: 100;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ═══ WIZARD NAV ═══ */
+.wizard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.wizard-question { font-family: 'Literata', Georgia, serif; font-size: 17px; font-weight: 600; line-height: 1.4; flex: 1; }
+.wizard-nav { display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: 16px; }
+.wizard-nav-btn {
+  display: flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px; padding: 0;
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer; color: var(--text-muted); font-size: 18px;
+  font-family: inherit; transition: border-color 0.15s;
+}
+.wizard-nav-btn:hover { border-color: var(--border-active); color: var(--text-secondary); }
+.wizard-nav-btn:active { transform: scale(0.95); }
+.wizard-nav-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wizard-step { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+.wizard-custom { display: flex; align-items: center; gap: 8px; }
+.wizard-custom-icon { font-size: 14px; color: var(--text-muted); flex-shrink: 0; }
+.wizard-footer { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+
+/* ═══ FORM ACTIONS ═══ */
+.form-actions { display: flex; justify-content: flex-end; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+
+
+/* ═══ HATTER THINKING ═══ */
+.hatter-thinking { text-align: center; padding: 24px; color: var(--text-muted); font-style: italic; }
+.hatter-thinking-icon { font-size: 24px; margin-bottom: 8px; animation: thinkPulse 1.5s ease-in-out infinite; }
+
+/* ═══ ARCHIVE ═══ */
+/* ═══ ARCHIVE SLIDER ═══ */
+.archive-slider {
+  background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px 20px; box-shadow: var(--shadow); position: relative;
+}
+.archive-slide { display: none; }
+.archive-slide.active { display: block; }
+.archive-q { font-size: 13px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.4; }
+.archive-a { font-size: 15px; color: var(--text-primary); font-weight: 500; }
+.archive-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border);
+}
+.archive-nav-btn {
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer; color: var(--text-muted); font-size: 16px; padding: 4px 12px;
+  font-family: inherit; transition: border-color 0.15s;
+}
+.archive-nav-btn:hover { border-color: var(--border-active); color: var(--text-secondary); }
+.archive-nav-btn:disabled { opacity: 0.3; cursor: default; }
+.archive-dots {
+  display: flex; gap: 6px; align-items: center;
+}
+.archive-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--border); transition: background 0.2s;
+}
+.archive-dot.active { background: var(--accent); }
+
+/* ═══ REVIEWS ═══ */
+
+/* ═══ PROGRESS BAR ═══ */
+.progress-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.progress-label { font-size: 12px; color: var(--text-muted); }
+.progress-track { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent); transition: width 0.3s; }
+
+/* ═══ HISTORY ITEMS ═══ */
+.history-item {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  cursor: pointer; transition: background 0.15s;
+  background: none; border-left: none; border-right: none; border-top: none;
+  width: 100%; text-align: left; font-family: inherit; font-size: inherit;
+  color: inherit; display: block;
+}
+.history-item:hover, .history-item:focus-visible { background: var(--accent-light); }
+.history-item:active { background: var(--bg-input); }
+.history-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.history-item:last-child { border-bottom: none; }
+.history-question { font-size: 14px; color: var(--text-primary); line-height: 1.4; }
+.history-date { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+/* ═══ MISC LAYOUT ═══ */
+.synthesis-actions { display: flex; justify-content: flex-end; margin-top: 20px; }
+.viewer-back { margin-bottom: 12px; }
+
+/* ═══ INLINE CONFIRM ═══ */
+.reset-confirm { display: none; position: fixed; bottom: 48px; right: 28px; z-index: 101;
+  background: var(--bg-surface); border: 1px solid var(--accent-red); border-radius: 10px;
+  padding: 16px 20px; box-shadow: var(--shadow-hover); max-width: 280px; }
+.reset-confirm.visible { display: block; }
+.reset-confirm-text { font-size: 13px; color: var(--text-primary); margin-bottom: 12px; }
+.reset-confirm-actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+/* ═══ REDUCED MOTION ═══ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ═══ LAYOUT ═══ */
+.layout { display: flex; min-height: 100vh; }
+.main { flex: 1; min-width: 0; }
+
+/* ═══ SIDEBAR ═══ */
+.sidebar {
+  width: 280px; max-width: 85vw; flex-shrink: 0; background: var(--bg-surface);
+  border-right: 1px solid var(--border); display: flex; flex-direction: column;
+  transition: margin-left 0.3s ease; overflow: hidden;
+}
+.sidebar.collapsed { margin-left: -280px; }
+.sidebar-header {
+  padding: 16px; display: flex; justify-content: space-between;
+  align-items: center; border-bottom: 1px solid var(--border);
+  font-size: 14px; font-weight: 600; color: var(--text-primary);
+}
+.sidebar-close {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-size: 16px; padding: 4px 8px;
+  border-radius: 4px;
+}
+.sidebar-close:hover { color: var(--text-primary); background: var(--accent-light); }
+.sidebar-list { flex: 1; overflow-y: auto; }
+.sidebar-open {
+  position: fixed; top: 16px; left: 16px; z-index: 150;
+  background: var(--bg-surface); border: 1px solid var(--border); border-radius: 8px;
+  cursor: pointer; font-size: 16px; color: var(--text-secondary);
+  padding: 8px 12px; font-family: inherit;
+  transition: border-color 0.2s, opacity 0.3s;
+  box-shadow: var(--shadow);
+}
+.sidebar:not(.collapsed) ~ .sidebar-open { opacity: 0; pointer-events: none; }
+.sidebar-open:hover { border-color: var(--border-active); }
+.sidebar-open:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 840px) {
+  .container { padding: 32px 20px; }
+  .header { margin-bottom: 36px; }
+  .sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0; z-index: 200;
+    box-shadow: var(--shadow-hover);
+  }
+  .sidebar.collapsed { margin-left: -280px; }
+}
+@media (max-width: 640px) {
+  .container { padding: 20px 16px; }
+  .header { flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .header-left h1 { font-size: 24px; }
+  .header-actions { margin-top: 0; }
+  .q-box { padding: 16px; }
+  .q-input { font-size: 16px; }
+  .synthesis { padding: 20px; }
+  .synthesis h2 { font-size: 18px; }
+  .status-bar { padding: 8px 16px; }
+  .sage-tab { padding: 8px 10px; font-size: 12px; min-height: 44px; }
+  .archive-nav-btn { min-height: 44px; padding: 8px 16px; }
+  .sage-tab-emoji { font-size: 14px; }
+  .sage-tab span:not(.sage-tab-emoji):not(.tab-dot) { display: none; }
+  .hatter-option { padding: 12px 16px; min-height: 44px; }
+  .btn { min-height: 44px; padding: 10px 16px; }
+  .theme-toggle, .reset-btn { min-height: 44px; }
+  .wizard-question { font-size: 15px; }
+    .reset-confirm { right: 16px; bottom: 44px; }
+}
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <aside class="sidebar collapsed" id="sidebar">
+    <div class="sidebar-header">
+      <span id="sidebar-title"></span>
+      <button class="sidebar-close" onclick="toggleSidebar()" aria-label="Close sidebar">✕</button>
+    </div>
+    <div class="sidebar-list" id="sidebar-sessions"></div>
+  </aside>
+  <button class="sidebar-open" onclick="toggleSidebar()" aria-label="Toggle sidebar" id="btn-sidebar">☰</button>
+  <main class="main">
+<div class="container">
+  <header class="header">
+    <div class="header-left">
+      <h1 id="main-title"></h1>
+      <div class="subtitle" id="main-subtitle"></div>
+    </div>
+    <div class="header-actions">
+      <select class="model-select" id="model-select" onchange="setModel(this.value)" aria-label="Select model">
+      </select>
+      <button class="reset-btn" onclick="resetSession()" title="Reset" id="btn-reset" style="display:none" aria-label="Reset session">↺</button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span id="themeIcon" aria-hidden="true">☀️</span> <span id="themeLabel"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="global-error" id="global-error" role="alert"></div>
+
+  <!-- QUESTION -->
+  <section class="section visible" id="sec-question">
+    <div class="q-box">
+      <label class="q-label" id="lbl-question" for="inp-question"></label>
+      <textarea class="q-input" id="inp-question" oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
+      <div class="form-actions">
+        <button id="btn-summon" class="btn btn-primary btn-submit" onclick="submitQuestion()"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSION VIEWER -->
+  <section class="section" id="sec-viewer">
+    <div class="viewer-back">
+      <button class="btn" onclick="closeViewer()" id="btn-back">←</button>
+    </div>
+    <div class="synthesis" id="viewer-content"></div>
+  </section>
+
+  <!-- INTERVIEW -->
+  <section class="section" id="sec-interview">
+    <div class="section-label" id="lbl-hatter"></div>
+    <div class="interview-list" id="interview-list" aria-live="polite"></div>
+  </section>
+
+  <!-- SAGES -->
+  <section class="section" id="sec-sages">
+    <div class="section-label" id="lbl-voices"></div>
+    <div class="progress-wrap" id="sages-progress" style="display:none"></div>
+    <div class="sage-tabs" id="sage-tabs">
+      <div class="sages-thinking-overlay" id="sages-overlay">
+        <div class="sages-thinking-emoji" id="sages-overlay-emoji"></div>
+        <div class="sages-thinking-text" id="sages-overlay-text"></div>
+      </div>
+      <div class="sage-tab-bar" id="sage-tab-bar" role="tablist"></div>
+      <div id="sage-panels"></div>
+    </div>
+  </section>
+
+  <!-- QUESTIONNAIRE #2 -->
+  <section class="section" id="sec-interview2">
+    <div class="section-label" id="lbl-hatter2"></div>
+    <div class="interview-list" id="interview2-list" aria-live="polite"></div>
+  </section>
+
+  <!-- SYNTHESIS -->
+  <section class="section" id="sec-synthesis">
+    <div id="synthesis-container" aria-live="polite"></div>
+  </section>
+</div>
+  </main>
+</div>
+
+<div class="reset-confirm" id="reset-confirm">
+  <div class="reset-confirm-text" id="reset-confirm-text"></div>
+  <div class="reset-confirm-actions">
+    <button class="btn" onclick="cancelReset()" id="btn-cancel-reset"></button>
+    <button class="btn" style="color:var(--accent-red);border-color:var(--accent-red)" onclick="confirmReset()" id="btn-confirm-reset"></button>
+  </div>
+</div>
+
+<footer class="status-bar" role="status" aria-live="polite">
+  <div id="status-left"></div>
+  <div id="status-tokens"></div>
+  <div id="status-right"></div>
+</footer>
+
+<script>
+const SAGES = [
+  {emoji: '🎯', name: 'Focuser', role: 'focus and essence', color: '#b8942e'},
+  {emoji: '⚔️', name: 'Strategist', role: 'positioning and timing', color: '#6b8fb8'},
+  {emoji: '💰', name: 'Pragmatist', role: 'economics and moat', color: '#5aad5a'},
+  {emoji: '🔥', name: 'Skeptic', role: 'fragility and optionality', color: '#b85040'},
+  {emoji: '🔧', name: 'Product Person', role: 'scope and deadlines', color: '#8a8a8a'},
+  {emoji: '📢', name: 'Marketer', role: 'tribe and narrative', color: '#c9874c'},
+  {emoji: '🔮', name: 'Visionary', role: '10-year horizon', color: '#8a6ec9'},
+];
+
+const LANG = navigator.language?.slice(0, 2) || 'en';
+let selectedModel = localStorage.getItem('board-model') || 'sonnet';
+function setModel(val) { selectedModel = val; localStorage.setItem('board-model', val); }
+
+const I18N = {
+  ru: {
+    title: 'Семь мудрецов',
+    subtitle: 'и Шляпник',
+    questionLabel: 'Вопрос для совета',
+    summon: 'Созвать мудрецов',
+    questionPlaceholder: 'Опишите ваш вопрос для совета...',
+    hatterAsks: '🎩 Шляпник спрашивает',
+    voices: 'Голоса',
+    thinking: 'Думает',
+    skipQuestion: 'Пропустить вопрос',
+    skipAnswers: 'Без ответов',
+    send: 'Отправить ответы',
+    summoning: 'Вызываем...',
+    round2pending: 'Второй раунд...',
+    synthesisPending: 'Формируем синтез...',
+    confirmReset: 'Сбросить сессию? Это нельзя отменить.',
+    sageQuestions: 'Вопросы мудрецов',
+    synthesis: 'Синтез',
+    somethingElse: 'Свой вариант...',
+    light: 'Светлая', dark: 'Тёмная',
+    waiting: 'Ждём ответы мудрецов',
+    startPrompt: 'Начните с вопроса',
+    connected: '● на связи',
+    disconnected: '○ нет связи',
+    hatterThinking: 'Шляпник готовит вопросы...',
+    expand: 'Подробнее',
+    collapse: 'Свернуть',
+    round1: 'Первый раунд',
+    round2: 'Второй раунд',
+    question: 'Вопрос',
+    sessionComplete: 'Сессия завершена',
+    sagePending: 'Мудрецы думают...',
+    yourAnswer: 'Ваш ответ...',
+
+    download: 'Скачать протокол',
+    pastSessions: 'Прошлые сессии',
+    back: 'Назад',
+    hatter2Asks: '🎩 Шляпник уточняет',
+    hatter2Thinking: 'Шляпник обрабатывает вопросы мудрецов...',
+    skipToSynthesis: 'Пропустить — к синтезу',
+    noSessions: '',
+    modelFast: '⚡ Быстрый (Sonnet)',
+    modelDeep: '🧠 Глубокий (Opus)',
+    sageNames: ['Фокусник', 'Стратег', 'Прагматик', 'Скептик', 'Продуктовик', 'Маркетолог', 'Визионер'],
+  },
+  en: {
+    title: 'Seven Sages',
+    subtitle: 'and the Hatter',
+    questionLabel: 'Question for the board',
+    summon: 'Summon the sages',
+    questionPlaceholder: 'Describe your question for the board...',
+    hatterAsks: '🎩 The Hatter asks',
+    voices: 'Voices',
+    thinking: 'Thinking',
+    skipQuestion: 'Skip question',
+    skipAnswers: 'Skip answers',
+    send: 'Send answers',
+    summoning: 'Summoning...',
+    round2pending: 'Second round...',
+    synthesisPending: 'Generating synthesis...',
+    confirmReset: 'Reset the session? This cannot be undone.',
+    sageQuestions: 'Questions from the sages',
+    synthesis: 'Synthesis',
+    somethingElse: 'Something else...',
+    light: 'Light', dark: 'Dark',
+    waiting: 'Waiting for sage responses',
+    startPrompt: 'Start with a question',
+    connected: '● connected',
+    disconnected: '○ disconnected',
+    hatterThinking: 'The Hatter is preparing questions...',
+    expand: 'Show more',
+    collapse: 'Collapse',
+    round1: 'First Round',
+    round2: 'Second Round',
+    question: 'Question',
+    sessionComplete: 'Session complete',
+    sagePending: 'Sages are thinking...',
+    yourAnswer: 'Your answer...',
+
+    download: 'Download protocol',
+    pastSessions: 'Past sessions',
+    back: 'Back',
+    hatter2Asks: '🎩 The Hatter follows up',
+    hatter2Thinking: 'The Hatter is processing sage questions...',
+    skipToSynthesis: 'Skip — go to synthesis',
+    noSessions: '',
+    modelFast: '⚡ Fast (Sonnet)',
+    modelDeep: '🧠 Deep (Opus)',
+    sageNames: ['Focuser', 'Strategist', 'Pragmatist', 'Skeptic', 'Product Person', 'Marketer', 'Visionary'],
+  },
+  zh: {
+    title: '七贤者', subtitle: '与疯帽匠', questionLabel: '向董事会提问', summon: '召唤贤者',
+    questionPlaceholder: '描述你想问董事会的问题...', hatterAsks: '🎩 疯帽匠提问', voices: '声音',
+    thinking: '思考中', skipQuestion: '跳过问题', skipAnswers: '跳过回答', send: '发送回答',
+    summoning: '召唤中...', round2pending: '第二轮...', synthesisPending: '生成总结...',
+    confirmReset: '重置会话？此操作无法撤消。', sageQuestions: '贤者的问题', synthesis: '总结',
+    somethingElse: '其他...', light: '浅色', dark: '深色', waiting: '等待贤者回应',
+    startPrompt: '从一个问题开始', connected: '● 已连接', disconnected: '○ 未连接',
+    hatterThinking: '疯帽匠正在准备问题...', expand: '展开', collapse: '收起',
+    round1: '第一轮', round2: '第二轮', question: '问题', sessionComplete: '会话结束',
+    sagePending: '贤者思考中...', yourAnswer: '你的回答...', download: '下载记录',
+    pastSessions: '历史会话', back: '返回', hatter2Asks: '🎩 疯帽匠追问',
+    hatter2Thinking: '疯帽匠正在处理贤者的问题...', skipToSynthesis: '跳过 — 前往总结', noSessions: '',
+    modelFast: '⚡ 快速 (Sonnet)', modelDeep: '🧠 深度 (Opus)',
+    sageNames: ['聚焦者', '战略家', '实用主义者', '怀疑论者', '产品人', '营销人', '远见者'],
+  },
+  es: {
+    title: 'Los Siete Sabios', subtitle: 'y el Sombrerero', questionLabel: 'Pregunta para la mesa',
+    summon: 'Convocar a los sabios', questionPlaceholder: 'Describe tu pregunta para la mesa...',
+    hatterAsks: '🎩 El Sombrerero pregunta', voices: 'Voces', thinking: 'Pensando',
+    skipQuestion: 'Saltar pregunta', skipAnswers: 'Saltar respuestas', send: 'Enviar respuestas',
+    summoning: 'Convocando...', round2pending: 'Segunda ronda...', synthesisPending: 'Generando síntesis...',
+    confirmReset: '¿Reiniciar la sesión? No se puede deshacer.', sageQuestions: 'Preguntas de los sabios',
+    synthesis: 'Síntesis', somethingElse: 'Algo más...', light: 'Claro', dark: 'Oscuro',
+    waiting: 'Esperando respuestas de los sabios', startPrompt: 'Empieza con una pregunta',
+    connected: '● conectado', disconnected: '○ desconectado',
+    hatterThinking: 'El Sombrerero prepara preguntas...', expand: 'Ver más', collapse: 'Colapsar',
+    round1: 'Primera ronda', round2: 'Segunda ronda', question: 'Pregunta',
+    sessionComplete: 'Sesión completa', sagePending: 'Los sabios están pensando...',
+    yourAnswer: 'Tu respuesta...', download: 'Descargar protocolo', pastSessions: 'Sesiones anteriores',
+    back: 'Volver', hatter2Asks: '🎩 El Sombrerero insiste',
+    hatter2Thinking: 'El Sombrerero procesa las preguntas de los sabios...',
+    skipToSynthesis: 'Saltar — ir a síntesis', noSessions: '',
+    modelFast: '⚡ Rápido (Sonnet)', modelDeep: '🧠 Profundo (Opus)',
+    sageNames: ['Enfocador', 'Estratega', 'Pragmático', 'Escéptico', 'Producto', 'Marketero', 'Visionario'],
+  },
+  hi: {
+    title: 'सात ऋषि', subtitle: 'और हैटर', questionLabel: 'बोर्ड के लिए प्रश्न',
+    summon: 'ऋषियों को बुलाएँ', questionPlaceholder: 'बोर्ड के लिए अपना प्रश्न लिखें...',
+    hatterAsks: '🎩 हैटर पूछता है', voices: 'आवाज़ें', thinking: 'सोच रहा है',
+    skipQuestion: 'प्रश्न छोड़ें', skipAnswers: 'उत्तर छोड़ें', send: 'उत्तर भेजें',
+    summoning: 'बुला रहे हैं...', round2pending: 'दूसरा दौर...', synthesisPending: 'संश्लेषण बन रहा है...',
+    confirmReset: 'सत्र रीसेट करें? यह पूर्ववत नहीं किया जा सकता।', sageQuestions: 'ऋषियों के प्रश्न',
+    synthesis: 'संश्लेषण', somethingElse: 'कुछ और...', light: 'लाइट', dark: 'डार्क',
+    waiting: 'ऋषियों की प्रतीक्षा', startPrompt: 'एक प्रश्न से शुरू करें',
+    connected: '● जुड़ा हुआ', disconnected: '○ अलग',
+    hatterThinking: 'हैटर प्रश्न तैयार कर रहा है...', expand: 'और दिखाएँ', collapse: 'छोटा करें',
+    round1: 'पहला दौर', round2: 'दूसरा दौर', question: 'प्रश्न',
+    sessionComplete: 'सत्र पूरा हुआ', sagePending: 'ऋषि सोच रहे हैं...',
+    yourAnswer: 'आपका उत्तर...', download: 'प्रोटोकॉल डाउनलोड करें', pastSessions: 'पिछले सत्र',
+    back: 'वापस', hatter2Asks: '🎩 हैटर आगे पूछता है',
+    hatter2Thinking: 'हैटर ऋषियों के प्रश्न संसाधित कर रहा है...',
+    skipToSynthesis: 'छोड़ें — संश्लेषण पर जाएँ', noSessions: '',
+    modelFast: '⚡ तेज़ (Sonnet)', modelDeep: '🧠 गहरा (Opus)',
+    sageNames: ['फ़ोकसर', 'रणनीतिकार', 'व्यावहारिक', 'संदेहवादी', 'प्रोडक्ट', 'मार्केटर', 'दूरदर्शी'],
+  },
+  ar: {
+    title: 'الحكماء السبعة', subtitle: 'والقبّعاتي', questionLabel: 'سؤال للمجلس',
+    summon: 'استدعاء الحكماء', questionPlaceholder: 'صِف سؤالك للمجلس...',
+    hatterAsks: '🎩 القبّعاتي يسأل', voices: 'أصوات', thinking: 'يفكّر',
+    skipQuestion: 'تخطّي السؤال', skipAnswers: 'تخطّي الإجابات', send: 'إرسال الإجابات',
+    summoning: 'جارٍ الاستدعاء...', round2pending: 'الجولة الثانية...', synthesisPending: 'جارٍ إعداد التوليف...',
+    confirmReset: 'إعادة تعيين الجلسة؟ لا يمكن التراجع.', sageQuestions: 'أسئلة الحكماء',
+    synthesis: 'توليف', somethingElse: 'شيء آخر...', light: 'فاتح', dark: 'داكن',
+    waiting: 'بانتظار ردود الحكماء', startPrompt: 'ابدأ بسؤال',
+    connected: '● متصل', disconnected: '○ غير متصل',
+    hatterThinking: 'القبّعاتي يحضّر الأسئلة...', expand: 'عرض المزيد', collapse: 'طيّ',
+    round1: 'الجولة الأولى', round2: 'الجولة الثانية', question: 'سؤال',
+    sessionComplete: 'انتهت الجلسة', sagePending: 'الحكماء يفكّرون...',
+    yourAnswer: 'إجابتك...', download: 'تحميل المحضر', pastSessions: 'الجلسات السابقة',
+    back: 'رجوع', hatter2Asks: '🎩 القبّعاتي يتابع',
+    hatter2Thinking: 'القبّعاتي يعالج أسئلة الحكماء...',
+    skipToSynthesis: 'تخطّي — إلى التوليف', noSessions: '',
+    modelFast: '⚡ سريع (Sonnet)', modelDeep: '🧠 عميق (Opus)',
+    sageNames: ['المُركِّز', 'الاستراتيجي', 'البراغماتي', 'المشكّك', 'المنتِج', 'المسوِّق', 'الرؤيوي'],
+  },
+  pt: {
+    title: 'Os Sete Sábios', subtitle: 'e o Chapeleiro', questionLabel: 'Pergunta para a mesa',
+    summon: 'Convocar os sábios', questionPlaceholder: 'Descreva sua pergunta para a mesa...',
+    hatterAsks: '🎩 O Chapeleiro pergunta', voices: 'Vozes', thinking: 'Pensando',
+    skipQuestion: 'Pular pergunta', skipAnswers: 'Pular respostas', send: 'Enviar respostas',
+    summoning: 'Convocando...', round2pending: 'Segunda rodada...', synthesisPending: 'Gerando síntese...',
+    confirmReset: 'Reiniciar a sessão? Isso não pode ser desfeito.', sageQuestions: 'Perguntas dos sábios',
+    synthesis: 'Síntese', somethingElse: 'Algo mais...', light: 'Claro', dark: 'Escuro',
+    waiting: 'Aguardando respostas dos sábios', startPrompt: 'Comece com uma pergunta',
+    connected: '● conectado', disconnected: '○ desconectado',
+    hatterThinking: 'O Chapeleiro está preparando perguntas...', expand: 'Ver mais', collapse: 'Recolher',
+    round1: 'Primeira rodada', round2: 'Segunda rodada', question: 'Pergunta',
+    sessionComplete: 'Sessão concluída', sagePending: 'Os sábios estão pensando...',
+    yourAnswer: 'Sua resposta...', download: 'Baixar protocolo', pastSessions: 'Sessões anteriores',
+    back: 'Voltar', hatter2Asks: '🎩 O Chapeleiro insiste',
+    hatter2Thinking: 'O Chapeleiro processa as perguntas dos sábios...',
+    skipToSynthesis: 'Pular — ir para síntese', noSessions: '',
+    modelFast: '⚡ Rápido (Sonnet)', modelDeep: '🧠 Profundo (Opus)',
+    sageNames: ['Focalizador', 'Estrategista', 'Pragmático', 'Cético', 'Produto', 'Marketeiro', 'Visionário'],
+  },
+  fr: {
+    title: 'Les Sept Sages', subtitle: 'et le Chapelier', questionLabel: 'Question pour le conseil',
+    summon: 'Convoquer les sages', questionPlaceholder: 'Décrivez votre question pour le conseil...',
+    hatterAsks: '🎩 Le Chapelier demande', voices: 'Voix', thinking: 'Réflexion',
+    skipQuestion: 'Passer la question', skipAnswers: 'Passer les réponses', send: 'Envoyer les réponses',
+    summoning: 'Convocation...', round2pending: 'Deuxième tour...', synthesisPending: 'Synthèse en cours...',
+    confirmReset: 'Réinitialiser la session ? Impossible à annuler.', sageQuestions: 'Questions des sages',
+    synthesis: 'Synthèse', somethingElse: 'Autre chose...', light: 'Clair', dark: 'Sombre',
+    waiting: 'En attente des réponses des sages', startPrompt: 'Commencez par une question',
+    connected: '● connecté', disconnected: '○ déconnecté',
+    hatterThinking: 'Le Chapelier prépare ses questions...', expand: 'Voir plus', collapse: 'Réduire',
+    round1: 'Premier tour', round2: 'Deuxième tour', question: 'Question',
+    sessionComplete: 'Session terminée', sagePending: 'Les sages réfléchissent...',
+    yourAnswer: 'Votre réponse...', download: 'Télécharger le protocole', pastSessions: 'Sessions passées',
+    back: 'Retour', hatter2Asks: '🎩 Le Chapelier relance',
+    hatter2Thinking: 'Le Chapelier traite les questions des sages...',
+    skipToSynthesis: 'Passer — aller à la synthèse', noSessions: '',
+    modelFast: '⚡ Rapide (Sonnet)', modelDeep: '🧠 Profond (Opus)',
+    sageNames: ['Focaliseur', 'Stratège', 'Pragmatique', 'Sceptique', 'Produit', 'Marketeur', 'Visionnaire'],
+  },
+  de: {
+    title: 'Die Sieben Weisen', subtitle: 'und der Hutmacher', questionLabel: 'Frage an das Gremium',
+    summon: 'Die Weisen rufen', questionPlaceholder: 'Beschreiben Sie Ihre Frage an das Gremium...',
+    hatterAsks: '🎩 Der Hutmacher fragt', voices: 'Stimmen', thinking: 'Denkt nach',
+    skipQuestion: 'Frage überspringen', skipAnswers: 'Antworten überspringen', send: 'Antworten senden',
+    summoning: 'Rufe herbei...', round2pending: 'Zweite Runde...', synthesisPending: 'Synthese wird erstellt...',
+    confirmReset: 'Sitzung zurücksetzen? Kann nicht rückgängig gemacht werden.',
+    sageQuestions: 'Fragen der Weisen', synthesis: 'Synthese', somethingElse: 'Etwas anderes...',
+    light: 'Hell', dark: 'Dunkel', waiting: 'Warte auf Antworten der Weisen',
+    startPrompt: 'Beginnen Sie mit einer Frage', connected: '● verbunden', disconnected: '○ getrennt',
+    hatterThinking: 'Der Hutmacher bereitet Fragen vor...', expand: 'Mehr anzeigen', collapse: 'Einklappen',
+    round1: 'Erste Runde', round2: 'Zweite Runde', question: 'Frage',
+    sessionComplete: 'Sitzung abgeschlossen', sagePending: 'Die Weisen denken nach...',
+    yourAnswer: 'Ihre Antwort...', download: 'Protokoll herunterladen', pastSessions: 'Vergangene Sitzungen',
+    back: 'Zurück', hatter2Asks: '🎩 Der Hutmacher hakt nach',
+    hatter2Thinking: 'Der Hutmacher verarbeitet die Fragen der Weisen...',
+    skipToSynthesis: 'Überspringen — zur Synthese', noSessions: '',
+    modelFast: '⚡ Schnell (Sonnet)', modelDeep: '🧠 Tief (Opus)',
+    sageNames: ['Fokussierer', 'Stratege', 'Pragmatiker', 'Skeptiker', 'Produkt', 'Marketeer', 'Visionär'],
+  },
+  ja: {
+    title: '七賢者', subtitle: 'と帽子屋', questionLabel: '評議会への質問',
+    summon: '賢者を召喚', questionPlaceholder: '評議会への質問を記述してください...',
+    hatterAsks: '🎩 帽子屋が問う', voices: '声', thinking: '思考中',
+    skipQuestion: '質問をスキップ', skipAnswers: '回答をスキップ', send: '回答を送信',
+    summoning: '召喚中...', round2pending: '第2ラウンド...', synthesisPending: '総括を生成中...',
+    confirmReset: 'セッションをリセットしますか？元に戻せません。', sageQuestions: '賢者からの質問',
+    synthesis: '総括', somethingElse: 'その他...', light: 'ライト', dark: 'ダーク',
+    waiting: '賢者の応答を待っています', startPrompt: '質問から始めましょう',
+    connected: '● 接続中', disconnected: '○ 未接続',
+    hatterThinking: '帽子屋が質問を準備中...', expand: '続きを見る', collapse: '折りたたむ',
+    round1: '第1ラウンド', round2: '第2ラウンド', question: '質問',
+    sessionComplete: 'セッション完了', sagePending: '賢者が思考中...',
+    yourAnswer: 'あなたの回答...', download: '議事録をダウンロード', pastSessions: '過去のセッション',
+    back: '戻る', hatter2Asks: '🎩 帽子屋が追加で問う',
+    hatter2Thinking: '帽子屋が賢者の質問を処理中...',
+    skipToSynthesis: 'スキップ — 総括へ', noSessions: '',
+    modelFast: '⚡ 高速 (Sonnet)', modelDeep: '🧠 深掘り (Opus)',
+    sageNames: ['フォーカサー', 'ストラテジスト', 'プラグマティスト', 'スケプティック', 'プロダクト', 'マーケター', 'ビジョナリー'],
+  },
+};
+const t = I18N[LANG] || I18N.en;
+
+const state = {
+  phase: 'idle',
+  title: null,
+  question: '',
+  interview: [],
+  sages: SAGES.map(s => ({...s, preview: '', round1: '', question: '', round2: ''})),
+  synthesis: null,
+  interview2: [],
+  _hatterStep: 0,
+  _hatter2Step: 0,
+};
+
+// ═══ MARKDOWN ═══
+function md(s) {
+  return s
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/^### (.+)$/gm, '<h4>$1</h4>')
+    .replace(/^## (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/gs, '<ul>$&</ul>')
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    .replace(/\n{2,}/g, '</p><p>')
+    .replace(/^/, '<p>').replace(/$/, '</p>')
+    .replace(/<p><(h[34]|ul|blockquote)/g, '<$1')
+    .replace(/<\/(h[34]|ul|blockquote)><\/p>/g, '</$1>');
+}
+
+// ═══ UTILS ═══
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function show(id) { document.getElementById(id).classList.add('visible'); }
+function hide(id) { document.getElementById(id).classList.remove('visible'); }
+
+function showSagesOverlay(text) {
+  const emoji = SAGES.map(s => `<span>${s.emoji}</span>`).join('');
+  document.getElementById('sages-overlay-emoji').innerHTML = emoji;
+  document.getElementById('sages-overlay-text').textContent = text;
+  document.getElementById('sages-overlay').classList.add('visible');
+}
+function hideSagesOverlay() {
+  document.getElementById('sages-overlay').classList.remove('visible');
+}
+
+async function post(url, data) {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+// ═══ INIT ═══
+function init() {
+  document.getElementById('main-title').innerHTML = `${esc(t.title)} <span class="amp">&amp;</span>`;
+  document.getElementById('main-subtitle').textContent = t.subtitle;
+  document.getElementById('lbl-question').textContent = t.questionLabel;
+  document.getElementById('btn-summon').textContent = t.summon;
+  document.getElementById('inp-question').placeholder = t.questionPlaceholder;
+  document.getElementById('lbl-hatter').textContent = t.hatterAsks;
+  document.getElementById('lbl-voices').textContent = t.voices;
+  document.getElementById('lbl-hatter2').textContent = t.hatter2Asks;
+  document.getElementById('themeLabel').textContent = t.light;
+  document.getElementById('status-left').textContent = t.startPrompt;
+
+  document.getElementById('sidebar-title').textContent = t.pastSessions;
+  document.getElementById('btn-back').textContent = `← ${t.back}`;
+
+  autoTheme();
+  const ms = document.getElementById('model-select');
+  ms.innerHTML = `<option value="sonnet">${t.modelFast}</option><option value="opus">${t.modelDeep}</option>`;
+  ms.value = selectedModel;
+  renderSageCards();
+  connectSSE();
+  loadSessions();
+}
+
+function renderSageCards() {
+  const bar = document.getElementById('sage-tab-bar');
+  const panels = document.getElementById('sage-panels');
+  bar.innerHTML = SAGES.map((s, i) => `
+    <button class="sage-tab" style="--sage-color:${s.color}" id="sage-tab-${i}"
+            onclick="switchTab(${i})" role="tab" aria-selected="${i === 0}" aria-controls="sage-panel-${i}">
+      <span class="sage-tab-emoji">${s.emoji}</span>
+      <span>${t.sageNames?.[i] || s.name}</span>
+      <span class="tab-dot"></span>
+    </button>`).join('');
+  panels.innerHTML = SAGES.map((s, i) => `
+    <div class="sage-tab-panel${i === 0 ? ' active' : ''}" style="--sage-color:${s.color}" id="sage-panel-${i}" role="tabpanel">
+      <div class="thinking-state"><span class="thinking-dots">${t.thinking}</span></div>
+      <div class="filled-content" id="sage-filled-${i}"></div>
+      <div class="card-error" id="sage-error-${i}"></div>
+    </div>`).join('');
+}
+
+let _activeTab = 0;
+function switchTab(i) {
+  document.querySelectorAll('.sage-tab').forEach((tab, j) => {
+    tab.classList.toggle('active', j === i);
+    tab.setAttribute('aria-selected', j === i);
+  });
+  document.querySelectorAll('.sage-tab-panel').forEach((p, j) => {
+    p.classList.toggle('active', j === i);
+  });
+  _activeTab = i;
+}
+
+// ═══ SSE ═══
+let es = null;
+function connectSSE() {
+  if (es) { es.close(); es = null; }
+  es = new EventSource('/events');
+
+  es.addEventListener('state', (e) => {
+    const s = JSON.parse(e.data);
+    restoreState(s);
+  });
+
+  es.addEventListener('hatter_thinking', () => {
+    state.phase = 'hatter';
+    hide('sec-viewer');
+    show('sec-interview');
+    document.getElementById('interview-list').innerHTML = `
+      <div class="hatter-thinking">
+        <div class="hatter-thinking-icon" aria-hidden="true">🎩</div>
+        ${esc(t.hatterThinking)}
+      </div>`;
+    document.getElementById('sec-interview').scrollIntoView({behavior:'smooth'});
+    updateStatus();
+  });
+
+  es.addEventListener('hatter_questions', (e) => {
+    const data = JSON.parse(e.data);
+    const questions = data.questions || data;
+    if (data.title) state.title = data.title;
+    state.interview = questions.map(q => ({q: q.question, options: q.options || [], a: ''}));
+    state._hatterStep = 0;
+    state.phase = 'hatter';
+    show('sec-interview');
+    renderHatterStep();
+    updateStatus();
+  });
+
+  es.addEventListener('sage_thinking', (e) => {
+    const {index} = JSON.parse(e.data);
+    const isR2 = state.sages.some(s => s.round1);
+    if (!isR2) state.phase = 'sages_round1';
+    show('sec-sages');
+    const tab = document.getElementById(`sage-tab-${index}`);
+    tab.classList.add('thinking');
+    if (isR2) {
+      updateSagesProgress();
+    }
+    updateStatus();
+  });
+
+  es.addEventListener('sage', (e) => {
+    const {index, preview, round1, question} = JSON.parse(e.data);
+    const isFirst = !state.sages.some(s => s.round1);
+    state.sages[index] = {...state.sages[index], preview, round1, question};
+    const tab = document.getElementById(`sage-tab-${index}`);
+    tab.classList.remove('thinking');
+    tab.classList.add('filled');
+    renderFilledSage(index);
+    if (isFirst) { hideSagesOverlay(); switchTab(index); }
+    updateSagesProgress();
+    updateStatus();
+  });
+
+  es.addEventListener('hatter2_thinking', () => {
+    state.phase = 'hatter2';
+    show('sec-interview2');
+    document.getElementById('interview2-list').innerHTML = `
+      <div class="hatter-thinking">
+        <div class="hatter-thinking-icon" aria-hidden="true">🎩</div>
+        ${esc(t.hatter2Thinking)}
+      </div>`;
+    updateStatus();
+  });
+
+  es.addEventListener('hatter_questionnaire2', (e) => {
+    const questions = JSON.parse(e.data);
+    state.interview2 = questions.map(q => ({q: q.question, options: q.options || [], a: ''}));
+    state._hatter2Step = 0;
+    state.phase = 'hatter2';
+    show('sec-interview2');
+    renderHatter2Step();
+    document.getElementById('sec-interview2').scrollIntoView({behavior:'smooth'});
+    updateStatus();
+  });
+
+  es.addEventListener('usage', (e) => {
+    const {tokens} = JSON.parse(e.data);
+    const fmt = (n) => n >= 1000 ? Math.round(n / 1000) + 'K' : String(n);
+    document.getElementById('status-tokens').textContent =
+      `${fmt(tokens.input)} in / ${fmt(tokens.output)} out`;
+  });
+
+  es.addEventListener('sage_round2', (e) => {
+    const {index, round2} = JSON.parse(e.data);
+    const isFirstR2 = !state.sages.some(s => s.round2);
+    state.sages[index].round2 = round2;
+    state.phase = 'sages_round2';
+    const tab = document.getElementById(`sage-tab-${index}`);
+    tab.classList.remove('thinking');
+    if (isFirstR2) hideSagesOverlay();
+    renderFilledSage(index);
+    switchRoundTab(index, 2);
+    updateSagesProgress();
+    updateStatus();
+  });
+
+  es.addEventListener('synthesis_thinking', () => {
+    state.phase = 'synthesis';
+    show('sec-synthesis');
+    document.getElementById('synthesis-container').innerHTML = `
+      <div class="hatter-thinking" style="padding:40px">
+        <div style="font-size:48px;animation:thinkPulse 1.5s ease-in-out infinite">🎩</div>
+        <div style="margin-top:12px">${esc(t.synthesisPending)}</div>
+      </div>`;
+    updateStatus();
+  });
+
+  es.addEventListener('synthesis', (e) => {
+    const text = JSON.parse(e.data);
+    state.synthesis = text;
+    state.phase = 'done';
+    show('sec-synthesis');
+    renderSynthesis(text);
+    // Don't auto-scroll — user may be reading sage responses
+    updateStatus();
+  });
+
+  es.addEventListener('error', (e) => {
+    const {message, phase} = JSON.parse(e.data);
+    if (phase && phase.startsWith('sage')) {
+      const match = message.match(/^(\w[\w\s]*?):/);
+      if (match) {
+        const idx = SAGES.findIndex(s => message.startsWith(s.name));
+        if (idx >= 0) {
+          const errEl = document.getElementById(`sage-error-${idx}`);
+          errEl.textContent = message;
+          errEl.style.display = 'block';
+          document.getElementById(`sage-tab-${idx}`).classList.remove('thinking');
+          return;
+        }
+      }
+    }
+    showGlobalError(message);
+  });
+
+  es.onopen = () => {
+    document.getElementById('status-right').textContent = t.connected;
+    document.getElementById('inp-question').disabled = false;
+    document.getElementById('btn-summon').disabled = false;
+  };
+
+  es.onerror = () => {
+    document.getElementById('status-right').textContent = t.disconnected;
+    document.getElementById('inp-question').disabled = true;
+    document.getElementById('btn-summon').disabled = true;
+    if (es.readyState === EventSource.CLOSED) {
+      setTimeout(connectSSE, 3000);
+    }
+  };
+}
+
+function showGlobalError(msg) {
+  const el = document.getElementById('global-error');
+  el.innerHTML = `${esc(msg)} <button onclick="this.parentElement.classList.remove('visible')" style="float:right;background:none;border:none;cursor:pointer;font-weight:bold;color:inherit;font-size:inherit" aria-label="Dismiss">✕</button>`;
+  el.classList.add('visible');
+}
+
+// ═══ STATE RESTORE ═══
+function restoreState(s) {
+  if (s.question && s.phase !== 'idle') {
+    document.getElementById('inp-question').value = s.question;
+    state.question = s.question;
+  }
+  if (s.title) state.title = s.title;
+  if (s.interview?.length) {
+    state.interview = s.interview.map(item => ({
+      q: item.q || item.question,
+      options: item.options || [],
+      a: item.a || '',
+    }));
+    show('sec-interview');
+    archiveInterview();
+  }
+  if (s.sages?.length) {
+    s.sages.forEach((sage, i) => {
+      if (sage.round1 || sage.preview) {
+        state.sages[i] = {...state.sages[i], ...sage};
+        const tab = document.getElementById(`sage-tab-${i}`);
+        tab.classList.add('filled');
+        renderFilledSage(i);
+      }
+    });
+    if (s.sages.some(sg => sg.round1)) show('sec-sages');
+  }
+  if (s.synthesis) {
+    state.synthesis = s.synthesis;
+    state.phase = 'done';
+    show('sec-synthesis');
+    renderSynthesis(s.synthesis);
+  }
+  if (s.interview2?.length) {
+    state.interview2 = s.interview2.map(item => ({
+      q: item.q || item.question,
+      options: item.options || [],
+      a: item.a || '',
+    }));
+    show('sec-interview2');
+    archiveInterview2();
+  } else if (s.phase === 'hatter2') {
+    show('sec-interview2');
+    document.getElementById('interview2-list').innerHTML = `
+      <div class="hatter-thinking">
+        <div class="hatter-thinking-icon" aria-hidden="true">🎩</div>
+        ${esc(t.hatter2Thinking)}
+      </div>`;
+  }
+  state.phase = s.phase || 'idle';
+  updateStatus();
+}
+
+// ═══ HATTER WIZARD ═══
+function renderHatterStep() {
+  const il = document.getElementById('interview-list');
+  const i = state._hatterStep;
+  const total = state.interview.length;
+  const item = state.interview[i];
+  const opts = item.options || [];
+
+  il.innerHTML = `
+    <div class="q-box">
+      <div class="wizard-header">
+        <div class="wizard-question">${esc(item.q)}</div>
+        <div class="wizard-nav">
+          ${i > 0 ? `<button class="wizard-nav-btn" onclick="hatterPrev()" aria-label="Previous question">‹</button>` : ''}
+          <span class="wizard-step">${i + 1} / ${total}</span>
+          ${i < total - 1 ? `<button class="wizard-nav-btn" onclick="hatterNext()" aria-label="Next question">›</button>` : ''}
+        </div>
+      </div>
+      ${opts.length ? `<div class="hatter-options" role="listbox">${opts.map((o, oi) => `
+        <button class="hatter-option${item.a === o ? ' selected' : ''}" onclick="hatterPick(${i}, ${oi})" role="option" aria-selected="${item.a === o}">
+          <span class="hatter-option-num" aria-hidden="true">${oi + 1}</span>
+          <span>${esc(o)}</span>
+        </button>`).join('')}
+      </div>` : ''}
+      <div class="wizard-custom" style="margin-top:${opts.length ? 8 : 0}px">
+        <span class="wizard-custom-icon" aria-hidden="true">✎</span>
+        <input class="field-input" id="hatter-input"
+          placeholder="${esc(t.somethingElse)}"
+          value="${esc(opts.includes(item.a) ? '' : item.a)}"
+          oninput="hatterCustom(${i}, this.value)"
+          onkeydown="if(event.key==='Enter')hatterNext()"
+          aria-label="${esc(t.somethingElse)}"
+          style="flex:1">
+        <button class="btn btn-primary" id="hatter-send" onclick="hatterNext()" style="display:none">→</button>
+      </div>
+      <div class="wizard-footer">
+        <button class="btn" onclick="hatterSkip()">${esc(t.skipQuestion)}</button>
+      </div>
+    </div>`;
+}
+
+function hatterPick(qi, oi) {
+  const item = state.interview[qi];
+  item.a = item.options[oi];
+  document.getElementById('hatter-input').value = '';
+  if (state._hatterStep < state.interview.length - 1) {
+    state._hatterStep++;
+    renderHatterStep();
+  } else {
+    submitAnswers();
+  }
+}
+
+function hatterCustom(qi, val) {
+  state.interview[qi].a = val;
+  const btn = document.getElementById('hatter-send');
+  if (btn) btn.style.display = val.trim() ? 'block' : 'none';
+}
+
+function hatterPrev() {
+  if (state._hatterStep > 0) { state._hatterStep--; renderHatterStep(); }
+}
+
+function hatterNext() {
+  const item = state.interview[state._hatterStep];
+  const input = document.getElementById('hatter-input');
+  if (input?.value.trim()) item.a = input.value.trim();
+  if (state._hatterStep < state.interview.length - 1) { state._hatterStep++; renderHatterStep(); }
+  else submitAnswers();
+}
+
+function hatterSkip() {
+  state.interview[state._hatterStep].a = '';
+  if (state._hatterStep < state.interview.length - 1) { state._hatterStep++; renderHatterStep(); }
+  else submitAnswers();
+}
+
+// ═══ SUBMIT ═══
+async function submitQuestion() {
+  const q = document.getElementById('inp-question').value.trim();
+  if (!q) return;
+  state.question = q;
+  const btn = document.getElementById('btn-summon');
+  const inp = document.getElementById('inp-question');
+  btn.disabled = true;
+  btn.textContent = t.summoning;
+  inp.disabled = true;
+  try {
+    await post('/api/question', {question: q, lang: LANG, model: selectedModel});
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = t.summon;
+    inp.disabled = false;
+    showGlobalError(err.message);
+  }
+}
+
+function submitAnswers() {
+  archiveInterview();
+  show('sec-sages');
+  SAGES.forEach((_, i) => {
+    document.getElementById(`sage-tab-${i}`).classList.add('thinking');
+  });
+  showSagesOverlay(t.sagePending);
+  post('/api/answers', state.interview.map(item => ({q: item.q, a: item.a})));
+  document.getElementById('sec-sages').scrollIntoView({behavior:'smooth'});
+  updateStatus();
+}
+
+function renderArchiveSlider(containerId, items) {
+  const el = document.getElementById(containerId);
+  if (!items.length) { el.innerHTML = ''; return; }
+  const id = containerId + '-slider';
+  el.innerHTML = `
+    <div class="archive-slider" id="${id}">
+      ${items.map((item, i) => `
+        <div class="archive-slide${i === 0 ? ' active' : ''}" data-idx="${i}">
+          <div class="archive-q">${esc(item.q)}</div>
+          <div class="archive-a">${esc(item.a)}</div>
+        </div>`).join('')}
+      ${items.length > 1 ? `<div class="archive-nav">
+        <button class="archive-nav-btn" onclick="archiveSlide('${id}',-1)" disabled>‹</button>
+        <div class="archive-dots">${items.map((_, i) => `<span class="archive-dot${i === 0 ? ' active' : ''}"></span>`).join('')}</div>
+        <button class="archive-nav-btn" onclick="archiveSlide('${id}',1)">›</button>
+      </div>` : ''}
+    </div>`;
+}
+
+function archiveSlide(id, dir) {
+  const slider = document.getElementById(id);
+  const slides = slider.querySelectorAll('.archive-slide');
+  const dots = slider.querySelectorAll('.archive-dot');
+  const btns = slider.querySelectorAll('.archive-nav-btn');
+  let cur = [...slides].findIndex(s => s.classList.contains('active'));
+  slides[cur].classList.remove('active');
+  dots[cur]?.classList.remove('active');
+  cur = Math.max(0, Math.min(slides.length - 1, cur + dir));
+  slides[cur].classList.add('active');
+  dots[cur]?.classList.add('active');
+  btns[0].disabled = cur === 0;
+  btns[1].disabled = cur === slides.length - 1;
+}
+
+function archiveInterview() {
+  renderArchiveSlider('interview-list', state.interview.filter(item => item.a));
+}
+
+// ═══ SAGE CARDS ═══
+function renderFilledSage(i) {
+  const s = state.sages[i];
+  const hasR2 = !!s.round2;
+  const tabBar = hasR2 ? `
+    <div class="sage-round-tabs">
+      <button class="sage-round-tab active" onclick="switchRoundTab(${i},1)">${esc(t.round1)}</button>
+      <button class="sage-round-tab" onclick="switchRoundTab(${i},2)">${esc(t.round2)}</button>
+    </div>` : '';
+
+  const r1Content = s.round1 ? `<div class="round-content">${md(s.round1)}</div>` : '';
+
+  const r2Content = s.round2 ? `<div class="round-content">${md(s.round2)}</div>` : '';
+
+  document.getElementById(`sage-filled-${i}`).innerHTML = `
+    <div class="card-body">
+      ${tabBar}
+      <div class="sage-round-panel active" id="sage-${i}-r1">${r1Content}</div>
+      ${hasR2 ? `<div class="sage-round-panel" id="sage-${i}-r2">${r2Content}</div>` : ''}
+    </div>`;
+}
+
+function switchRoundTab(sageIdx, round) {
+  const container = document.getElementById(`sage-filled-${sageIdx}`);
+  container.querySelectorAll('.sage-round-tab').forEach((t, j) => t.classList.toggle('active', j === round - 1));
+  container.querySelectorAll('.sage-round-panel').forEach((p, j) => p.classList.toggle('active', j === round - 1));
+}
+
+function updateSagesProgress() {
+  const bar = document.getElementById('sages-progress');
+  if (!bar) return;
+  const isR2 = state.phase === 'sages_round2';
+  const filled = isR2 ? state.sages.filter(s => s.round2).length : state.sages.filter(s => s.round1).length;
+  if (filled >= SAGES.length) {
+    bar.style.display = 'none';
+  } else {
+    const label = isR2 ? `${t.round2} ${filled}/${SAGES.length}` : `${filled}/${SAGES.length}`;
+    bar.style.display = 'flex';
+    bar.innerHTML = `<span class="progress-label">${label}</span>
+      <div class="progress-track">
+        <div class="progress-fill" style="width:${(filled/SAGES.length)*100}%"></div>
+      </div>`;
+  }
+}
+
+// ═══ HATTER WIZARD #2 ═══
+function renderHatter2Step() {
+  const il = document.getElementById('interview2-list');
+  const i = state._hatter2Step;
+  const total = state.interview2.length;
+  const item = state.interview2[i];
+  const opts = item.options || [];
+
+  il.innerHTML = `
+    <div class="q-box">
+      <div class="wizard-header">
+        <div class="wizard-question">${esc(item.q)}</div>
+        <div class="wizard-nav">
+          ${i > 0 ? `<button class="wizard-nav-btn" onclick="hatter2Prev()" aria-label="Previous question">‹</button>` : ''}
+          <span class="wizard-step">${i + 1} / ${total}</span>
+          ${i < total - 1 ? `<button class="wizard-nav-btn" onclick="hatter2Next()" aria-label="Next question">›</button>` : ''}
+        </div>
+      </div>
+      ${opts.length ? `<div class="hatter-options" role="listbox">${opts.map((o, oi) => `
+        <button class="hatter-option${item.a === o ? ' selected' : ''}" onclick="hatter2Pick(${i}, ${oi})" role="option" aria-selected="${item.a === o}">
+          <span class="hatter-option-num" aria-hidden="true">${oi + 1}</span>
+          <span>${esc(o)}</span>
+        </button>`).join('')}
+      </div>` : ''}
+      <div class="wizard-custom" style="margin-top:${opts.length ? 8 : 0}px">
+        <span class="wizard-custom-icon" aria-hidden="true">✎</span>
+        <input class="field-input" id="hatter2-input"
+          placeholder="${esc(t.somethingElse)}"
+          value="${esc(opts.includes(item.a) ? '' : item.a)}"
+          oninput="hatter2Custom(${i}, this.value)"
+          onkeydown="if(event.key==='Enter')hatter2Next()"
+          aria-label="${esc(t.somethingElse)}"
+          style="flex:1">
+        <button class="btn btn-primary" id="hatter2-send" onclick="hatter2Next()" style="display:none">→</button>
+      </div>
+      <div class="wizard-footer">
+        <button class="btn" onclick="hatter2Skip()">${esc(t.skipQuestion)}</button>
+        <button class="btn" onclick="skipToSynthesis()" style="color:var(--text-muted)">${esc(t.skipToSynthesis)}</button>
+      </div>
+    </div>`;
+}
+
+function hatter2Pick(qi, oi) {
+  const item = state.interview2[qi];
+  item.a = item.options[oi];
+  document.getElementById('hatter2-input').value = '';
+  if (state._hatter2Step < state.interview2.length - 1) {
+    state._hatter2Step++;
+    renderHatter2Step();
+  } else {
+    submitAnswers2();
+  }
+}
+
+function hatter2Custom(qi, val) {
+  state.interview2[qi].a = val;
+  const btn = document.getElementById('hatter2-send');
+  if (btn) btn.style.display = val.trim() ? 'block' : 'none';
+}
+
+function hatter2Prev() {
+  if (state._hatter2Step > 0) { state._hatter2Step--; renderHatter2Step(); }
+}
+
+function hatter2Next() {
+  const item = state.interview2[state._hatter2Step];
+  const input = document.getElementById('hatter2-input');
+  if (input?.value.trim()) item.a = input.value.trim();
+  if (state._hatter2Step < state.interview2.length - 1) { state._hatter2Step++; renderHatter2Step(); }
+  else submitAnswers2();
+}
+
+function hatter2Skip() {
+  state.interview2[state._hatter2Step].a = '';
+  if (state._hatter2Step < state.interview2.length - 1) { state._hatter2Step++; renderHatter2Step(); }
+  else submitAnswers2();
+}
+
+function submitAnswers2() {
+  archiveInterview2();
+  SAGES.forEach((_, i) => {
+    if (state.sages[i].round1) {
+      document.getElementById(`sage-tab-${i}`).classList.add('thinking');
+    }
+  });
+  showSagesOverlay(t.round2pending);
+  post('/api/answers2', state.interview2.map(item => ({q: item.q, a: item.a})));
+  document.getElementById('sec-sages').scrollIntoView({behavior:'smooth'});
+  updateStatus();
+}
+
+function archiveInterview2() {
+  renderArchiveSlider('interview2-list', state.interview2.filter(item => item.a));
+}
+
+function skipToSynthesis() {
+  archiveInterview2();
+  post('/api/skip-round2', {});
+  updateStatus();
+}
+
+// ═══ RESET ═══
+function resetSession() {
+  if (state.phase === 'idle') { doReset(); return; }
+  const el = document.getElementById('reset-confirm');
+  document.getElementById('reset-confirm-text').textContent = t.confirmReset;
+  document.getElementById('btn-cancel-reset').textContent = t.back || 'Back';
+  document.getElementById('btn-confirm-reset').textContent = '↺ Reset';
+  el.classList.add('visible');
+}
+function cancelReset() {
+  document.getElementById('reset-confirm').classList.remove('visible');
+}
+async function confirmReset() {
+  document.getElementById('reset-confirm').classList.remove('visible');
+  doReset();
+}
+async function doReset() {
+  await post('/api/reset', {});
+  state.phase = 'idle';
+  state.title = null;
+  state.question = '';
+  state.interview = [];
+  state.interview2 = [];
+  state.sages = SAGES.map(s => ({...s, preview: '', round1: '', question: '', round2: ''}));
+  state.synthesis = null;
+  state._hatterStep = 0;
+  state._hatter2Step = 0;
+
+  document.getElementById('inp-question').value = '';
+  document.getElementById('inp-question').disabled = false;
+  document.getElementById('btn-summon').disabled = false;
+  document.getElementById('btn-summon').textContent = t.summon;
+  document.getElementById('btn-summon').style.display = '';
+  document.getElementById('btn-summon').onclick = submitQuestion;
+  document.getElementById('interview-list').innerHTML = '';
+  document.getElementById('interview2-list').innerHTML = '';
+  document.getElementById('synthesis-container').innerHTML = '';
+  document.getElementById('global-error').classList.remove('visible');
+  document.getElementById('status-tokens').textContent = '';
+
+  hide('sec-interview');
+  hide('sec-interview2');
+  hide('sec-sages');
+  hide('sec-synthesis');
+  show('sec-question');
+
+  renderSageCards();
+  updateStatus();
+  loadSessions();
+}
+
+// ═══ STATUS ═══
+function updateStatus() {
+  const filledSages = state.sages.filter(s => s.round1).length;
+  const left = document.getElementById('status-left');
+  const right = document.getElementById('status-right');
+
+  if (state.phase === 'done') {
+    left.textContent = t.sessionComplete;
+  } else if (state.phase === 'synthesis') {
+    left.textContent = t.synthesisPending;
+  } else if (state.phase === 'sages_round2') {
+    const r2filled = state.sages.filter(s => s.round2).length;
+    left.textContent = `${t.round2pending} ${r2filled}/${SAGES.length}`;
+  } else if (state.phase === 'sages_round1') {
+    left.textContent = `${t.sagePending} ${filledSages}/${SAGES.length}`;
+  } else if (state.phase === 'hatter2') {
+    left.textContent = t.hatter2Asks;
+  } else if (state.phase === 'hatter') {
+    left.textContent = t.hatterAsks;
+  } else if (!state.question) {
+    left.textContent = t.startPrompt;
+  } else {
+    left.textContent = t.waiting;
+  }
+  document.getElementById('btn-reset').style.display = state.phase === 'idle' ? 'none' : '';
+}
+
+// ═══ SYNTHESIS ═══
+function renderSynthesis(text) {
+  document.getElementById('synthesis-container').innerHTML = `
+    <div class="synthesis">
+      <h2>${esc(t.synthesis)}</h2>
+      <div class="synthesis-content">${md(text)}</div>
+      <div class="synthesis-actions">
+        <a class="btn btn-primary" href="/api/download" download style="text-decoration:none">⬇ ${t.download}</a>
+      </div>
+    </div>`;
+}
+
+// ═══ SIDEBAR ═══
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+}
+
+// ═══ SESSIONS HISTORY ═══
+async function loadSessions() {
+  let sessions;
+  try {
+    sessions = await (await fetch('/api/sessions')).json();
+  } catch { sessions = []; }
+  const list = document.getElementById('sidebar-sessions');
+  if (sessions.length === 0) {
+    list.innerHTML = '';
+    return;
+  }
+  list.innerHTML = sessions.map(s => `
+    <button class="history-item" onclick="openSession('${esc(s.file)}')">
+      <div class="history-question">${esc(s.title || s.question)}</div>
+      <div class="history-date">${esc(s.date)}</div>
+    </button>`).join('');
+}
+
+let _viewingArchive = false;
+
+async function openSession(file) {
+  try {
+    const data = await (await fetch(`/api/sessions/${encodeURIComponent(file)}`)).json();
+    _viewingArchive = true;
+
+    // Reset UI
+    hide('sec-viewer');
+    hide('sec-interview');
+    hide('sec-sages');
+    hide('sec-interview2');
+    hide('sec-synthesis');
+    renderSageCards();
+
+    // Show question (read-only) with back button
+    const qInput = document.getElementById('inp-question');
+    qInput.value = data.question || '';
+    qInput.disabled = true;
+    qInput.style.height = 'auto';
+    qInput.style.height = qInput.scrollHeight + 'px';
+    document.getElementById('btn-summon').textContent = `← ${t.back}`;
+    document.getElementById('btn-summon').disabled = false;
+    document.getElementById('btn-summon').style.display = '';
+    document.getElementById('btn-summon').onclick = closeViewer;
+    show('sec-question');
+
+    // Restore interviews as sliders
+    if (data.interview?.length) {
+      state.interview = data.interview.map(item => ({
+        q: item.q || item.question, options: item.options || [], a: item.a || '',
+      }));
+      show('sec-interview');
+      archiveInterview();
+    }
+
+    // Restore sages in tabs
+    if (data.sages?.length) {
+      data.sages.forEach((sage, i) => {
+        if (sage.round1) {
+          state.sages[i] = {...state.sages[i], ...sage};
+          const tab = document.getElementById(`sage-tab-${i}`);
+          tab.classList.add('filled');
+          renderFilledSage(i);
+          if (sage.round2) switchRoundTab(i, 2);
+        }
+      });
+      show('sec-sages');
+    }
+
+    // Restore interview2
+    if (data.interview2?.length) {
+      state.interview2 = data.interview2.map(item => ({
+        q: item.q || item.question, options: item.options || [], a: item.a || '',
+      }));
+      show('sec-interview2');
+      archiveInterview2();
+    }
+
+    // Restore synthesis
+    if (data.synthesis) {
+      state.synthesis = data.synthesis;
+      show('sec-synthesis');
+      renderSynthesis(data.synthesis);
+    }
+
+    toggleSidebar();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  } catch (err) {
+    showGlobalError(err.message);
+  }
+}
+
+function closeViewer() {
+  if (_viewingArchive) {
+    _viewingArchive = false;
+    // Reset to current session state from server
+    doReset();
+    return;
+  }
+  hide('sec-viewer');
+  show('sec-question');
+  if (state.interview.length) show('sec-interview');
+  if (state.sages.some(s => s.round1)) show('sec-sages');
+  if (state.interview2.length) show('sec-interview2');
+  if (state.synthesis) show('sec-synthesis');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// ═══ THEME ═══
+function autoTheme() {
+  const saved = localStorage.getItem('board-theme');
+  if (saved) {
+    applyTheme(saved === 'dark');
+    return;
+  }
+  const hour = new Date().getHours();
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(prefersDark || hour >= 19 || hour < 7);
+}
+
+function applyTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  const btn = document.querySelector('.theme-toggle');
+  // Button previews the OTHER theme
+  document.getElementById('themeIcon').textContent = dark ? '☀️' : '🌙';
+  document.getElementById('themeLabel').textContent = dark ? t.light : t.dark;
+  btn.classList.toggle('preview-light', dark);
+  btn.classList.toggle('preview-dark', !dark);
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  applyTheme(!isDark);
+  localStorage.setItem('board-theme', isDark ? 'light' : 'dark');
+}
+
+// ═══ START ═══
+init();
+</script>
+<script src="/test-fixtures.js"></script>
+</body>
+</html>
