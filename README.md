@@ -107,6 +107,10 @@ See [PRINCIPLES.md](PRINCIPLES.md) for the design philosophy.
 
 Type `test question` to run a full session with mock data. No API calls, no tokens spent. Great for exploring the interface.
 
+## Like it?
+
+Star the repo and [vote on what to build next](https://github.com/aveleazer/wonderboard/issues).
+
 ## License
 
 [MIT](LICENSE)
