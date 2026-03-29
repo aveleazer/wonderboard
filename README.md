@@ -12,20 +12,6 @@ You ask AI a question. You get one answer. Polite, balanced, averaged out. Nobod
 
 In real life, the best decisions come from arguments between people who think differently. Wonderboard creates that argument.
 
-## Example Session
-
-Question: *"I want to expand my product line — what other AI-powered tools would be useful?"*
-
-**🎯 Focuser:** "You're expanding the product line of a product only you use. That's not strategy. That's procrastination in a nice wrapper."
-
-**🔮 Visionary:** "You're asking 'what other features to add?' — but that's the question of a storefront architect, not a systems architect. It's like Engelbart in 1968 asking 'what other commands to add to the command line?' — instead of inventing the mouse."
-
-**💰 Pragmatist (round 1):** "The Hatter picking the right composition for each question — that's your potential moat."
-
-**💰 Pragmatist (round 2, after reading Visionary):** "I take that back. It's a protocol, not a feature. But for you right now — premature abstraction."
-
-**🎩 Hatter (synthesis):** "Board doesn't compete with consultants. It competes with silence."
-
 ## How is this different from just asking Claude
 
 **Isolation.** Each advisor thinks independently, in their own API call. When one prompt tries to be a skeptic and a visionary at the same time — you get mush. When they're isolated — you get real disagreement.
