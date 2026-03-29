@@ -1,8 +1,4 @@
-# Cherny Principle
-
-The bar: if Boris Cherny (creator of Claude Code) saw this project, he'd say "I wouldn't have done it better."
-
-Solo developer who built a tool for himself — and it became a product for everyone. Same story here.
+# Principles
 
 ## 7 Angles
 
