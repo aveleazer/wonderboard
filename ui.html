@@ -1269,6 +1269,7 @@ async function submitQuestion() {
 
 function submitAnswers() {
   archiveInterview();
+  state.phase = 'sages_round1';
   show('sec-sages');
   SAGES.forEach((_, i) => {
     document.getElementById(`sage-tab-${i}`).classList.add('thinking');
@@ -1442,6 +1443,7 @@ function hatter2Skip() {
 
 function submitAnswers2() {
   archiveInterview2();
+  state.phase = 'sages_round2';
   SAGES.forEach((_, i) => {
     if (state.sages[i].round1) {
       document.getElementById(`sage-tab-${i}`).classList.add('thinking');
