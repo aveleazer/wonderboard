@@ -18,7 +18,7 @@
 
 > Склонируй https://github.com/aveleazer/wonderboard и запусти install.sh
 
-Затем наберите `/board`. Всё.
+Claude установит и откроет Wonderboard в браузере. В следующий раз — просто `/wonderboard` или попросите Claude созвать совет.
 
 ## Требования
 

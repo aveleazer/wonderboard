@@ -18,7 +18,7 @@ Paste this into [Claude Code](https://claude.ai/code):
 
 > Clone https://github.com/aveleazer/wonderboard and run install.sh
 
-Then type `/board`. That's it.
+Claude will install it and open Wonderboard in your browser. Next time, just type `/wonderboard` or ask Claude to convene the board.
 
 ## Requirements
 
