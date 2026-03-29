@@ -2,64 +2,111 @@
 
 # Wonderboard
 
-Virtual board of directors powered by Claude. 7 AI advisors who disagree with you and each other.
+7 AI advisors who disagree with you and each other.
 
 > *"The only tool that will tell you what you don't want to hear."*
 
-## What is this
+## The Problem
 
-You have a business question. You summon the Board. The Hatter interviews you to understand the context. Then 7 Sages — each with a distinct perspective — analyze your situation independently, challenge each other, and deliver concrete action plans. The Hatter synthesizes everything and adds one perpendicular thought that flips the situation.
+You ask AI a question. You get one answer. Polite, balanced, averaged out. Nobody says "this will fail." Nobody asks "why are you even doing this?" Nobody suggests the crazy alternative you haven't considered.
 
-No yes-men. No consensus-seeking. Real disagreement from archetypes who think differently.
+In real life, the best decisions come from arguments between people who think differently. Wonderboard creates that argument.
+
+## Example Session
+
+Question: *"I want to expand my product line — what other AI-powered tools would be useful?"*
+
+**🎯 Focuser:** "You're expanding the product line of a product only you use. That's not strategy. That's procrastination in a nice wrapper."
+
+**🔮 Visionary:** "You're asking 'what other features to add?' — but that's the question of a storefront architect, not a systems architect. It's like Engelbart in 1968 asking 'what other commands to add to the command line?' — instead of inventing the mouse."
+
+**💰 Pragmatist (round 1):** "The Hatter picking the right composition for each question — that's your potential moat."
+
+**💰 Pragmatist (round 2, after reading Visionary):** "I take that back. It's a protocol, not a feature. But for you right now — premature abstraction."
+
+**🎩 Hatter (synthesis):** "Board doesn't compete with consultants. It competes with silence."
+
+## How is this different from just asking Claude
+
+**Isolation.** Each advisor thinks independently, in their own API call. When one prompt tries to be a skeptic and a visionary at the same time — you get mush. When they're isolated — you get real disagreement.
+
+**Two rounds.** In round 1, advisors respond without seeing each other's opinions. In round 2, they read all responses, argue, and change positions. The Pragmatist takes back a recommendation because the Visionary convinced him. The Skeptic reinforces the Focuser's argument. You can't get this from a single prompt.
+
+**Interview.** The Hatter asks clarifying questions before convening the Board. You won't get seven answers to a poorly framed question.
+
+**Context.** The `context.md` file contains your business description. Every advisor gets it automatically — no need to re-explain who you are every time.
+
+**Synthesis ≠ averaging.** The Hatter doesn't seek compromise. He maps the disagreements: where they converged, where they diverged, why — and adds one perpendicular thought that flips the situation.
+
+## Example Questions
+
+Wonderboard isn't limited to business. It's a tool for any decision that needs polyphony:
+
+🏢 **Strategy.** "I have 5 products and one person. What to kill, what to keep?"
+
+🚀 **Launch.** "I want to enter the US market with a product that's only popular in my home country."
+
+💰 **Money.** "I got an investor offer. Take it or stay bootstrapped?"
+
+🧠 **Career.** "I'm 35, tired of employment. Go solo or not?"
+
+🏗️ **Architecture.** "Monolith or microservices for a 3-year project?"
+
+📝 **Content.** "I have a portal with 30K articles. How not to kill it during a platform migration?"
+
+🤝 **Negotiation.** "Client wants a 40% discount. What do I do?"
 
 ## Install
 
-Paste this into [Claude Code](https://claude.ai/code):
+Paste this into [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code):
 
 > Clone https://github.com/aveleazer/wonderboard and run install.sh
 
 Claude will install it and open Wonderboard in your browser. Next time, just type `/wonderboard` or ask Claude to convene the board.
 
-## Requirements
+**Requirements:** Node.js 18+, [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code) (works on your existing subscription — no API keys).
 
-- Node.js 18+
-- [Claude Code](https://claude.ai/code) (works on your existing subscription — no API keys)
+### Tokens
+
+Wonderboard is token-intensive. One full session: 7 advisors × 2 rounds + interview + synthesis = 16+ Claude calls. On a Claude Max/Pro subscription, this is covered by your plan.
+
+To explore the interface without API calls, use test mode (type `test question`).
 
 ## The Board
 
-| | Advisor | Thinks about |
-|---|---------|-------------|
-| 🎯 | Focuser | Focus and essence |
-| ⚔️ | Strategist | Positioning and timing |
-| 💰 | Pragmatist | Economics and moat |
-| 🔥 | Skeptic | Fragility and optionality |
-| 🔧 | Product Person | Scope and deadlines |
-| 📢 | Marketer | Tribe and narrative |
-| 🔮 | Visionary | 10-year horizon |
+| | Advisor | Lens |
+|---|---|---|
+| 🎯 | Focuser | "Throw out half. What's left?" |
+| ⚔️ | Strategist | "Where to fight, where to retreat?" |
+| 💰 | Pragmatist | "Show me the unit economics. Where's the moat?" |
+| 🔥 | Skeptic | "Where does this break? Who pays for the mistake?" |
+| 🔧 | Product Person | "What can you ship in 6 weeks?" |
+| 📢 | Marketer | "Who tells a friend about this and why?" |
+| 🔮 | Visionary | "What does this look like in 10 years?" |
 | 🎩 | Hatter | Interviews, synthesizes, flips the script |
 
-## How a session works
+## How a Session Works
 
 1. **Your question** — what you need advice on
 2. **Hatter interview** — clarifying questions to extract context
 3. **Round 1** — each Sage responds independently + asks their own follow-up question
 4. **Follow-up questionnaire** — Hatter compiles Sage questions into a focused survey
-5. **Round 2** — Sages read each other's Round 1 + your answers, deliver final positions with action plans
-6. **Synthesis** — Hatter summarizes consensus, disagreements, and adds one mad perpendicular thought
+5. **Round 2** — Sages read each other's answers + yours, deliver final positions with action plans
+6. **Synthesis** — Hatter summarizes: consensus, disagreements, and one perpendicular thought
 
 ## Configuration
 
 - `context.md` — your business context (auto-created on first run, gitignored)
-- `profiles/*.md` — advisor personas (fully editable)
+- `profiles/*.md` — advisor personas (fully editable, add your own)
 - `prompts/*.md` — prompt templates
-- 10 languages supported, auto-detected from browser
+- 10 UI languages, auto-detected from browser
 
 ## Architecture
 
 Zero dependencies. Built-in Node.js modules only.
 
 | File | What it does |
-|------|-------------|
+|---|---|
 | `server.js` | HTTP server, calls Claude via CLI, session logic |
 | `ui.html` | Single-page interface — no framework, no build step |
 | `profiles/` | Persona system prompts |
@@ -67,9 +114,9 @@ Zero dependencies. Built-in Node.js modules only.
 
 See [PRINCIPLES.md](PRINCIPLES.md) for the design philosophy.
 
-## Test mode
+## Test Mode
 
-Type **test question** in the question field to run a full session with mock data. No API calls, no tokens spent. Great for exploring the interface.
+Type `test question` to run a full session with mock data. No API calls, no tokens spent. Great for exploring the interface.
 
 ## License
 
