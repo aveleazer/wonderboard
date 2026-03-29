@@ -574,7 +574,7 @@ textarea.field-input { resize: vertical; min-height: 60px; }
 <footer class="status-bar" role="status" aria-live="polite">
   <div id="status-left"></div>
   <div id="status-tokens"></div>
-  <span style="font-size:11px;opacity:0.6"><a href="https://github.com/aveleazer/wonderboard" target="_blank" rel="noopener" style="color:var(--text-muted);text-decoration:none">Wonderboard</a> · <a href="https://github.com/aveleazer/wonderboard/issues" target="_blank" rel="noopener" style="color:var(--text-muted);text-decoration:none">Vote on next features</a></span>
+  <span id="footer-links" style="font-size:11px;opacity:0.6"></span>
   <div id="status-right"></div>
 </footer>
 
@@ -629,6 +629,7 @@ const I18N = {
     yourAnswer: 'Ваш ответ...',
 
     download: 'Скачать протокол',
+    voteLink: 'Голосуйте за новые функции',
     pastSessions: 'Прошлые сессии',
     back: 'Назад',
     hatter2Asks: '🎩 Шляпник уточняет',
@@ -674,6 +675,7 @@ const I18N = {
     yourAnswer: 'Your answer...',
 
     download: 'Download protocol',
+    voteLink: 'Vote on next features',
     pastSessions: 'Past sessions',
     back: 'Back',
     hatter2Asks: '🎩 The Hatter follows up',
@@ -694,7 +696,7 @@ const I18N = {
     startPrompt: '从一个问题开始', connected: '● 已连接', disconnected: '○ 未连接',
     hatterThinking: '疯帽匠正在准备问题...', expand: '展开', collapse: '收起',
     round1: '第一轮', round2: '第二轮', question: '问题', sessionComplete: '会话结束',
-    sagePending: '贤者思考中...', yourAnswer: '你的回答...', download: '下载记录',
+    sagePending: '贤者思考中...', yourAnswer: '你的回答...', download: '下载记录', voteLink: '为新功能投票',
     pastSessions: '历史会话', back: '返回', hatter2Asks: '🎩 疯帽匠追问',
     hatter2Thinking: '疯帽匠正在处理贤者的问题...', skipToSynthesis: '跳过 — 前往总结', noSessions: '',
     modelFast: '⚡ 快速 (Sonnet)', modelDeep: '🧠 深度 (Opus)',
@@ -713,7 +715,7 @@ const I18N = {
     hatterThinking: 'El Sombrerero prepara preguntas...', expand: 'Ver más', collapse: 'Colapsar',
     round1: 'Primera ronda', round2: 'Segunda ronda', question: 'Pregunta',
     sessionComplete: 'Sesión completa', sagePending: 'Los sabios están pensando...',
-    yourAnswer: 'Tu respuesta...', download: 'Descargar protocolo', pastSessions: 'Sesiones anteriores',
+    yourAnswer: 'Tu respuesta...', download: 'Descargar protocolo', voteLink: 'Vota por nuevas funciones', pastSessions: 'Sesiones anteriores',
     back: 'Volver', hatter2Asks: '🎩 El Sombrerero insiste',
     hatter2Thinking: 'El Sombrerero procesa las preguntas de los sabios...',
     skipToSynthesis: 'Saltar — ir a síntesis', noSessions: '',
@@ -733,7 +735,7 @@ const I18N = {
     hatterThinking: 'हैटर प्रश्न तैयार कर रहा है...', expand: 'और दिखाएँ', collapse: 'छोटा करें',
     round1: 'पहला दौर', round2: 'दूसरा दौर', question: 'प्रश्न',
     sessionComplete: 'सत्र पूरा हुआ', sagePending: 'ऋषि सोच रहे हैं...',
-    yourAnswer: 'आपका उत्तर...', download: 'प्रोटोकॉल डाउनलोड करें', pastSessions: 'पिछले सत्र',
+    yourAnswer: 'आपका उत्तर...', download: 'प्रोटोकॉल डाउनलोड करें', voteLink: 'नई सुविधाओं के लिए वोट करें', pastSessions: 'पिछले सत्र',
     back: 'वापस', hatter2Asks: '🎩 हैटर आगे पूछता है',
     hatter2Thinking: 'हैटर ऋषियों के प्रश्न संसाधित कर रहा है...',
     skipToSynthesis: 'छोड़ें — संश्लेषण पर जाएँ', noSessions: '',
@@ -753,7 +755,7 @@ const I18N = {
     hatterThinking: 'القبّعاتي يحضّر الأسئلة...', expand: 'عرض المزيد', collapse: 'طيّ',
     round1: 'الجولة الأولى', round2: 'الجولة الثانية', question: 'سؤال',
     sessionComplete: 'انتهت الجلسة', sagePending: 'الحكماء يفكّرون...',
-    yourAnswer: 'إجابتك...', download: 'تحميل المحضر', pastSessions: 'الجلسات السابقة',
+    yourAnswer: 'إجابتك...', download: 'تحميل المحضر', voteLink: 'صوّت للميزات القادمة', pastSessions: 'الجلسات السابقة',
     back: 'رجوع', hatter2Asks: '🎩 القبّعاتي يتابع',
     hatter2Thinking: 'القبّعاتي يعالج أسئلة الحكماء...',
     skipToSynthesis: 'تخطّي — إلى التوليف', noSessions: '',
@@ -773,7 +775,7 @@ const I18N = {
     hatterThinking: 'O Chapeleiro está preparando perguntas...', expand: 'Ver mais', collapse: 'Recolher',
     round1: 'Primeira rodada', round2: 'Segunda rodada', question: 'Pergunta',
     sessionComplete: 'Sessão concluída', sagePending: 'Os sábios estão pensando...',
-    yourAnswer: 'Sua resposta...', download: 'Baixar protocolo', pastSessions: 'Sessões anteriores',
+    yourAnswer: 'Sua resposta...', download: 'Baixar protocolo', voteLink: 'Vote nas próximas funcionalidades', pastSessions: 'Sessões anteriores',
     back: 'Voltar', hatter2Asks: '🎩 O Chapeleiro insiste',
     hatter2Thinking: 'O Chapeleiro processa as perguntas dos sábios...',
     skipToSynthesis: 'Pular — ir para síntese', noSessions: '',
@@ -793,7 +795,7 @@ const I18N = {
     hatterThinking: 'Le Chapelier prépare ses questions...', expand: 'Voir plus', collapse: 'Réduire',
     round1: 'Premier tour', round2: 'Deuxième tour', question: 'Question',
     sessionComplete: 'Session terminée', sagePending: 'Les sages réfléchissent...',
-    yourAnswer: 'Votre réponse...', download: 'Télécharger le protocole', pastSessions: 'Sessions passées',
+    yourAnswer: 'Votre réponse...', download: 'Télécharger le protocole', voteLink: 'Votez pour les prochaines fonctionnalités', pastSessions: 'Sessions passées',
     back: 'Retour', hatter2Asks: '🎩 Le Chapelier relance',
     hatter2Thinking: 'Le Chapelier traite les questions des sages...',
     skipToSynthesis: 'Passer — aller à la synthèse', noSessions: '',
@@ -813,7 +815,7 @@ const I18N = {
     hatterThinking: 'Der Hutmacher bereitet Fragen vor...', expand: 'Mehr anzeigen', collapse: 'Einklappen',
     round1: 'Erste Runde', round2: 'Zweite Runde', question: 'Frage',
     sessionComplete: 'Sitzung abgeschlossen', sagePending: 'Die Weisen denken nach...',
-    yourAnswer: 'Ihre Antwort...', download: 'Protokoll herunterladen', pastSessions: 'Vergangene Sitzungen',
+    yourAnswer: 'Ihre Antwort...', download: 'Protokoll herunterladen', voteLink: 'Für neue Funktionen abstimmen', pastSessions: 'Vergangene Sitzungen',
     back: 'Zurück', hatter2Asks: '🎩 Der Hutmacher hakt nach',
     hatter2Thinking: 'Der Hutmacher verarbeitet die Fragen der Weisen...',
     skipToSynthesis: 'Überspringen — zur Synthese', noSessions: '',
@@ -833,7 +835,7 @@ const I18N = {
     hatterThinking: '帽子屋が質問を準備中...', expand: '続きを見る', collapse: '折りたたむ',
     round1: '第1ラウンド', round2: '第2ラウンド', question: '質問',
     sessionComplete: 'セッション完了', sagePending: '賢者が思考中...',
-    yourAnswer: 'あなたの回答...', download: '議事録をダウンロード', pastSessions: '過去のセッション',
+    yourAnswer: 'あなたの回答...', download: '議事録をダウンロード', voteLink: '次の機能に投票する', pastSessions: '過去のセッション',
     back: '戻る', hatter2Asks: '🎩 帽子屋が追加で問う',
     hatter2Thinking: '帽子屋が賢者の質問を処理中...',
     skipToSynthesis: 'スキップ — 総括へ', noSessions: '',
@@ -909,6 +911,7 @@ function init() {
   document.getElementById('themeLabel').textContent = t.light;
   document.getElementById('status-left').textContent = t.startPrompt;
 
+  document.getElementById('footer-links').innerHTML = `<a href="https://github.com/aveleazer/wonderboard" target="_blank" rel="noopener" style="color:var(--text-muted);text-decoration:none">Wonderboard</a> · <a href="https://github.com/aveleazer/wonderboard/issues" target="_blank" rel="noopener" style="color:var(--text-muted);text-decoration:none">${esc(t.voteLink)}</a>`;
   document.getElementById('sidebar-title').textContent = t.pastSessions;
   document.getElementById('btn-back').textContent = `← ${t.back}`;
 

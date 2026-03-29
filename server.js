@@ -222,6 +222,7 @@ async function runHatter(question, lang) {
 
 async function runSagesRound1(interviewAnswers) {
   state.phase = 'sages_round1';
+  interviewAnswers.forEach((a, i) => { if (state.interview[i]) state.interview[i].a = a.a || ''; });
   const interviewContext = interviewAnswers
     .filter(a => a.a)
     .map(a => `Q: ${a.q}\nA: ${a.a}`)
@@ -292,6 +293,7 @@ async function runHatterQuestionnaire2() {
 
 async function runSagesRound2(answers2) {
   state.phase = 'sages_round2';
+  answers2.forEach((a, i) => { if (state.interview2[i]) state.interview2[i].a = a.a || ''; });
   const allRound1 = state.sages
     .map(s => `${s.emoji} ${s.name}: ${s.round1}`)
     .join('\n\n---\n\n');
