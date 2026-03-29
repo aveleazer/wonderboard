@@ -12,22 +12,18 @@ You have a business question. You summon the Board. The Hatter interviews you to
 
 No yes-men. No consensus-seeking. Real disagreement from archetypes who think differently.
 
-## Quick Start
+## Install
 
-```bash
-git clone https://github.com/aveleazer/wonderboard.git
-cd wonderboard
-./install.sh
-```
+Paste this into [Claude Code](https://claude.ai/code):
 
-Then in Claude Code, type `/board`. That's it.
+> Clone https://github.com/aveleazer/wonderboard and run install.sh
 
-The board opens in your browser. On first run, `context.md` is created — describe your business there. It's included in every advisor's prompt.
+Then type `/board`. That's it.
 
 ## Requirements
 
 - Node.js 18+
-- [Claude Code](https://claude.ai/code) CLI installed and authenticated (works on your existing subscription — no API keys needed)
+- [Claude Code](https://claude.ai/code) (works on your existing subscription — no API keys)
 
 ## The Board
 

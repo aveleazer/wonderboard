@@ -12,22 +12,18 @@
 
 Никаких поддакиваний. Никакого поиска консенсуса. Настоящее несогласие от архетипов, которые думают по-разному.
 
-## Быстрый старт
+## Установка
 
-```bash
-git clone https://github.com/aveleazer/wonderboard.git
-cd wonderboard
-./install.sh
-```
+Вставьте это в [Claude Code](https://claude.ai/code):
 
-Затем в Claude Code наберите `/board`. Всё.
+> Склонируй https://github.com/aveleazer/wonderboard и запусти install.sh
 
-Борд откроется в браузере. При первом запуске создаётся `context.md` — опишите там свой бизнес. Этот контекст включается в промпт каждого советника.
+Затем наберите `/board`. Всё.
 
 ## Требования
 
 - Node.js 18+
-- [Claude Code](https://claude.ai/code) CLI — установлен и авторизован (работает на вашей подписке, API-ключи не нужны)
+- [Claude Code](https://claude.ai/code) (работает на вашей подписке, API-ключи не нужны)
 
 ## Совет
 
