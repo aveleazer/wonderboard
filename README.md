@@ -14,7 +14,7 @@ In real life, the best decisions come from arguments between people who think di
 
 ## How is this different from just asking Claude
 
-**Isolation.** Each advisor thinks independently, in their own API call. When one prompt tries to be a skeptic and a visionary at the same time — you get mush. When they're isolated — you get real disagreement.
+**Isolation.** Each advisor thinks independently, in a separate Claude call. When one prompt tries to be a skeptic and a visionary at the same time — you get mush. When they're isolated — you get real disagreement.
 
 **Two rounds.** In round 1, advisors respond without seeing each other's opinions. In round 2, they read all responses, argue, and change positions. The Pragmatist takes back a recommendation because the Visionary convinced him. The Skeptic reinforces the Focuser's argument. You can't get this from a single prompt.
 
